@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.montesorrilearning.app-mergeDebugResources-29:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/fish/.gradle/caches/transforms-3/be7218f228344e4449a759dbee687ef6/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

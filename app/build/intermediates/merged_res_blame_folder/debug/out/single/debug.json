@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.montesorrilearning.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "com.example.montesorrilearning.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.montesorrilearning.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.example.montesorrilearning.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.montesorrilearning.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.montesorrilearning.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.montesorrilearning.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.montesorrilearning.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    }
+]

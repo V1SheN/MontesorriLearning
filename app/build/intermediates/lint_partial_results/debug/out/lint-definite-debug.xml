@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.2" type="incidents">
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="260"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="260"/>
+    </incident>
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 36"
+            oldString="34"
+            replacement="36"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="13"
+            column="9"
+            startOffset="261"
+            endLine="13"
+            endColumn="21"
+            endOffset="273"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.17.0">
+        <fix-replace
+            description="Change to 1.17.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.17.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="41"
+            column="20"
+            startOffset="844"
+            endLine="41"
+            endColumn="51"
+            endOffset="875"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="42"
+            column="20"
+            startOffset="895"
+            endLine="42"
+            endColumn="56"
+            endOffset="931"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.13.0">
+        <fix-replace
+            description="Change to 1.13.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.13.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="43"
+            column="20"
+            startOffset="951"
+            endLine="43"
+            endColumn="65"
+            endOffset="996"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="44"
+            column="20"
+            startOffset="1016"
+            endLine="44"
+            endColumn="70"
+            endOffset="1066"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.3.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="46"
+            column="31"
+            startOffset="1141"
+            endLine="46"
+            endColumn="62"
+            endOffset="1172"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0">
+        <fix-replace
+            description="Change to 3.7.0"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.7.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="47"
+            column="31"
+            startOffset="1203"
+            endLine="47"
+            endColumn="75"
+            endOffset="1247"/>
+    </incident>
+
+</incidents>

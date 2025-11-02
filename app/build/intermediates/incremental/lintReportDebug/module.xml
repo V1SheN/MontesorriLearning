@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/fish/Software/Development/github/MontesorriLearning/app"
+    name=":app"
+    type="APP"
+    maven="MontesorriLearning:app:"
+    agpVersion="8.1.2"
+    buildFolder="build"
+    bootClassPath="/home/fish/Android/Sdk/platforms/android-34/android.jar:/home/fish/Android/Sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

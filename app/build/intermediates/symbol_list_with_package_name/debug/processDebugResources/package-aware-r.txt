@@ -2970,6 +2970,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable blue_circle
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2978,11 +2979,17 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable coloring_page_cat
+drawable coloring_page_dog
+drawable coloring_page_puppy
+drawable coloring_page_simple_puppy
+drawable coloring_page_star
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable green_circle
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3073,6 +3080,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable red_circle
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3169,6 +3177,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id blue_button
 id bottom
 id bounce
 id bounceBoth
@@ -3191,6 +3200,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id clear_button
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3241,6 +3251,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawing_view
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3255,6 +3266,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id eraser_button
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3280,6 +3292,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id green_button
 id group_divider
 id grouping
 id groups
@@ -3316,6 +3329,11 @@ id line3
 id linear
 id listMode
 id list_item
+id load_button
+id load_cat_button
+id load_dog_button
+id load_puppy_button
+id load_simple_puppy_button
 id m3_side_sheet
 id marquee
 id masked
@@ -3434,6 +3452,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id red_button
 id report_drawn
 id reverseSawtooth
 id right
@@ -3442,6 +3461,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id save_button
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth

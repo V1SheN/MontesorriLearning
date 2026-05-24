@@ -1,22 +1,62 @@
 [
     {
-        "merged": "com.example.montesorrilearning.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_blue_circle.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/blue_circle.xml"
     },
     {
-        "merged": "com.example.montesorrilearning.app-debug-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_coloring_page_dog.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/coloring_page_dog.xml"
     },
     {
-        "merged": "com.example.montesorrilearning.app-debug-31:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.montesorrilearning.app-main-33:/xml/data_extraction_rules.xml"
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_coloring_page_puppy.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/coloring_page_puppy.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_coloring_page_star.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/coloring_page_star.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_coloring_page_cat.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/coloring_page_cat.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_coloring_page_simple_puppy.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/coloring_page_simple_puppy.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/menu_main_menu.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/menu/main_menu.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_red_circle.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/red_circle.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/xml_data_extraction_rules.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/layout/activity_main.xml"
     },
     {
         "merged": "com.example.montesorrilearning.app-debug-31:/layout_activity_main.xml.flat",
         "source": "com.example.montesorrilearning.app-main-33:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.montesorrilearning.app-debug-31:/xml_backup_rules.xml.flat",
-        "source": "com.example.montesorrilearning.app-main-33:/xml/backup_rules.xml"
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/drawable_green_circle.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/drawable/green_circle.xml"
+    },
+    {
+        "merged": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-debug-31:/xml_backup_rules.xml.flat",
+        "source": "/home/fish/.gradle/daemon/8.13/com.example.montesorrilearning.app-main-33:/xml/backup_rules.xml"
     }
 ]

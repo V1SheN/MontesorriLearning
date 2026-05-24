@@ -1,0 +1,87 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    volumes:
+      - ./data/pg:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: montessori
+      POSTGRES_USER: montessori
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    restart: always
+    networks:
+      - internal
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    volumes:
+      - ./data/minio:/data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_password
+    secrets:
+      - minio_password
+    restart: always
+    networks:
+      - internal
+
+  api:
+    build: ./server
+    depends_on:
+      - postgres
+      - minio
+      - ntfy
+    environment:
+      DATABASE_URL: postgres://montessori@postgres/montessori
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY_FILE: /run/secrets/minio_password
+      JWT_SECRET_FILE: /run/secrets/jwt_secret
+      NTFY_URL: http://ntfy:80
+      PORT: 3000
+    secrets:
+      - db_password
+      - minio_password
+      - jwt_secret
+    restart: always
+    networks:
+      - internal
+
+  ntfy:
+    image: binwiederhier/ntfy
+    volumes:
+      - ./data/ntfy:/var/lib/ntfy
+    restart: always
+    networks:
+      - internal
+
+  caddy:
+    image: caddy:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data/caddy/data:/data
+      - ./data/caddy/config:/config
+    depends_on:
+      - api
+      - ntfy
+    restart: always
+    networks:
+      - internal
+
+networks:
+  internal:
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  minio_password:
+    file: ./secrets/minio_password.txt
+  jwt_secret:
+    file: ./secrets/jwt_secret.txt

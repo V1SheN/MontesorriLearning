@@ -1,0 +1,54 @@
+package com.example.montesorrilearning.util
+
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth_prefs")
+
+class TokenManager(private val context: Context) {
+
+    companion object {
+        private val ACCESS_TOKEN = stringPreferencesKey("access_token")
+        private val REFRESH_TOKEN = stringPreferencesKey("refresh_token")
+        private val USER_ROLE = stringPreferencesKey("user_role")
+        private val USER_ID = stringPreferencesKey("user_id")
+        private val USER_NAME = stringPreferencesKey("user_name")
+    }
+
+    val accessToken: Flow<String?> = context.dataStore.data.map { it[ACCESS_TOKEN] }
+
+    val refreshToken: Flow<String?> = context.dataStore.data.map { it[REFRESH_TOKEN] }
+
+    val userRole: Flow<String?> = context.dataStore.data.map { it[USER_ROLE] }
+
+    val userId: Flow<String?> = context.dataStore.data.map { it[USER_ID] }
+
+    val userName: Flow<String?> = context.dataStore.data.map { it[USER_NAME] }
+
+    suspend fun saveAuthData(access: String, refresh: String, role: String, userId: String, name: String) {
+        context.dataStore.edit {
+            it[ACCESS_TOKEN] = access
+            it[REFRESH_TOKEN] = refresh
+            it[USER_ROLE] = role
+            it[USER_ID] = userId
+            it[USER_NAME] = name
+        }
+    }
+
+    suspend fun getAccessToken(): String? = context.dataStore.data.first()[ACCESS_TOKEN]
+
+    suspend fun getRefreshToken(): String? = context.dataStore.data.first()[REFRESH_TOKEN]
+
+    suspend fun getRole(): String? = context.dataStore.data.first()[USER_ROLE]
+
+    suspend fun clear() {
+        context.dataStore.edit { it.clear() }
+    }
+}

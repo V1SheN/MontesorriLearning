@@ -1,0 +1,19 @@
+
+# Server
+server/node_modules/
+
+# Docker data
+/data/
+
+# Secrets
+/secrets/
+
+# Android build artifacts
+app/build/
+build/
+.gradle/
+.idea/
+local.properties
+
+# Server env
+server/.env

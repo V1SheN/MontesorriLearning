@@ -66,7 +66,7 @@ interface ApiService {
     suspend fun createWorkEntry(@Body body: WorkEntryRequest): WorkEntry
 
     @DELETE("api/work-entries/{id}")
-    suspend fun deleteWorkEntry(@Path("id") id: String): Response<Unit>
+    suspend fun deleteWorkEntry(@Path("id") id: String): Response<Void>
 
     @Multipart
     @POST("api/upload")
@@ -93,7 +93,7 @@ interface ApiService {
     suspend fun sendMessage(@Body body: MessageRequest): Message
 
     @PUT("api/messages/{id}/read")
-    suspend fun markMessageRead(@Path("id") id: String): Response<Unit>
+    suspend fun markMessageRead(@Path("id") id: String): Response<Void>
 
     @GET("api/classrooms")
     suspend fun getClassrooms(): List<Classroom>

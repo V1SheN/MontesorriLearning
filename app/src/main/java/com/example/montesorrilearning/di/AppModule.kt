@@ -18,6 +18,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Provider
 import javax.inject.Singleton
 
 @Module
@@ -34,8 +35,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAuthInterceptor(tokenManager: TokenManager): AuthInterceptor {
-        return AuthInterceptor(tokenManager)
+    fun provideAuthInterceptor(
+        tokenManager: TokenManager,
+        apiService: Provider<ApiService>
+    ): AuthInterceptor {
+        return AuthInterceptor(tokenManager, apiService)
     }
 
     @Provides
@@ -76,7 +80,7 @@ object AppModule {
             context,
             AppDatabase::class.java,
             "montessori_db"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
     @Provides

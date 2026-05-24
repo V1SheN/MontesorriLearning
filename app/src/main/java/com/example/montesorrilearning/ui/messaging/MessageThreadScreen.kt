@@ -60,7 +60,7 @@ fun MessageThreadScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    items(messages.size) { index ->
+                    items(messages.size, key = { index -> messages[index].id }) { index ->
                         val msg = messages[index]
                         Card(
                             shape = RoundedCornerShape(12.dp),

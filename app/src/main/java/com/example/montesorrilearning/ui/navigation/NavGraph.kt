@@ -1,6 +1,11 @@
 package com.example.montesorrilearning.ui.navigation
 
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -52,7 +57,18 @@ fun NavGraph(
 
     NavHost(navController = navController, startDestination = startDestination) {
         composable(Routes.LOGIN) {
-            val uiState = authViewModel.uiState.value
+            val uiState by authViewModel.uiState.collectAsState()
+            LaunchedEffect(uiState.isLoggedIn) {
+                if (uiState.isLoggedIn) {
+                    val route = when (uiState.role) {
+                        "teacher" -> Routes.TEACHER_DASHBOARD
+                        else -> Routes.PARENT_FEED
+                    }
+                    navController.navigate(route) {
+                        popUpTo(Routes.LOGIN) { inclusive = true }
+                    }
+                }
+            }
             LoginScreen(
                 onLogin = { email, password -> authViewModel.login(email, password) },
                 onRegister = { email, password, name, role -> authViewModel.register(email, password, name, role) },
@@ -62,7 +78,7 @@ fun NavGraph(
         }
 
         composable(Routes.TEACHER_DASHBOARD) {
-            val uiState = teacherViewModel.uiState.value
+            val uiState by teacherViewModel.uiState.collectAsState()
             DashboardScreen(
                 children = uiState.children,
                 dailyCounts = emptyMap(),
@@ -97,10 +113,12 @@ fun NavGraph(
         ) { backStackEntry ->
             val childId = backStackEntry.arguments?.getString("childId") ?: ""
             val childName = backStackEntry.arguments?.getString("childName") ?: ""
-            val uiState = teacherViewModel.uiState.value
+            val uiState by teacherViewModel.uiState.collectAsState()
+            val child = uiState.children.find { it.id == childId }
+                ?: com.example.montesorrilearning.domain.model.Child(id = childId, name = childName)
 
             CaptureScreen(
-                child = com.example.montesorrilearning.domain.model.Child(id = childId, name = childName),
+                child = child,
                 capturedPhotos = uiState.capturedPhotos,
                 dailyCount = uiState.dailyLimitCount,
                 dailyLimitReached = uiState.dailyLimitReached,
@@ -117,7 +135,7 @@ fun NavGraph(
         }
 
         composable(Routes.TODAY_ENTRIES) {
-            val uiState = teacherViewModel.uiState.value
+            val uiState by teacherViewModel.uiState.collectAsState()
             TodayEntriesScreen(
                 entries = uiState.todayEntries,
                 onEntryClick = { entry ->
@@ -129,22 +147,30 @@ fun NavGraph(
             LaunchedEffect(Unit) { teacherViewModel.loadTodayEntries() }
         }
 
-        composable(Routes.TEACHER_ENTRY_DETAIL) {
-            val uiState = teacherViewModel.uiState.value
-            uiState.selectedEntry?.let { entry ->
+        composable(
+            route = Routes.TEACHER_ENTRY_DETAIL,
+            arguments = listOf(navArgument("entryId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val entryId = backStackEntry.arguments?.getString("entryId") ?: ""
+            val uiState by teacherViewModel.uiState.collectAsState()
+            val entry = uiState.selectedEntry ?: uiState.todayEntries.find { it.id == entryId }
+            if (entry != null) {
                 EntryDetailScreen(
                     entry = entry,
                     onDelete = {
-                        /* delete handled here */
                         navController.popBackStack()
                     },
                     onBack = { navController.popBackStack() }
                 )
+            } else {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text("Entry not found")
+                }
             }
         }
 
         composable(Routes.PARENT_FEED) {
-            val uiState = parentViewModel.uiState.value
+            val uiState by parentViewModel.uiState.collectAsState()
             FeedScreen(
                 feedEntries = uiState.feedEntries,
                 totalEntries = uiState.dailySummary?.totalEntries ?: uiState.feedEntries.size,
@@ -169,9 +195,16 @@ fun NavGraph(
             LaunchedEffect(Unit) { parentViewModel.loadFeed() }
         }
 
-        composable(Routes.PARENT_ENTRY_DETAIL) {
-            val uiState = parentViewModel.uiState.value
-            uiState.selectedEntry?.let { entry ->
+        composable(
+            route = Routes.PARENT_ENTRY_DETAIL,
+            arguments = listOf(navArgument("entryId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val entryId = backStackEntry.arguments?.getString("entryId") ?: ""
+            val uiState by parentViewModel.uiState.collectAsState()
+            val entry = uiState.selectedEntry
+                ?: uiState.feedEntries.find { it.id == entryId }
+                ?: uiState.archivedEntries.find { it.id == entryId }
+            if (entry != null) {
                 ParentEntryDetailScreen(
                     entry = entry,
                     onBack = {
@@ -180,11 +213,15 @@ fun NavGraph(
                     },
                     onShare = { /* share intent */ }
                 )
+            } else {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text("Entry not found")
+                }
             }
         }
 
         composable(Routes.ARCHIVE) {
-            val uiState = parentViewModel.uiState.value
+            val uiState by parentViewModel.uiState.collectAsState()
             ArchiveScreen(
                 entries = uiState.archivedEntries,
                 selectedDate = uiState.selectedDate,
@@ -198,7 +235,7 @@ fun NavGraph(
         }
 
         composable(Routes.MESSAGE_LIST) {
-            val uiState = messageViewModel.uiState.value
+            val uiState by messageViewModel.uiState.collectAsState()
             MessageListScreen(
                 messages = uiState.messages,
                 onMessageClick = { msg ->
@@ -212,7 +249,7 @@ fun NavGraph(
         }
 
         composable(Routes.MESSAGE_THREAD) {
-            val uiState = messageViewModel.uiState.value
+            val uiState by messageViewModel.uiState.collectAsState()
             MessageThreadScreen(
                 messages = uiState.messages,
                 onSend = { body, subject, classroomId ->

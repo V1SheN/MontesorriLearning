@@ -84,7 +84,7 @@ fun CaptureScreen(
             },
             title = { Text("Daily Limit Reached") },
             text = {
-                Text("$child has $dailyCount images today (max 50). Do you want to upload more?")
+                Text("${child.name} has $dailyCount images today (max 50). Do you want to upload more?")
             },
             confirmButton = {
                 TextButton(onClick = {

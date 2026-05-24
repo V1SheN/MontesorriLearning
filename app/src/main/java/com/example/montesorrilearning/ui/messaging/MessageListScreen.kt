@@ -66,7 +66,7 @@ fun MessageListScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(messages) { message ->
+                items(messages, key = { it.id }) { message ->
                     MessageItem(
                         message = message,
                         onClick = { onMessageClick(message) }

@@ -20,7 +20,6 @@ import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.WorkEntry
 import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
-import java.time.LocalDate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -80,20 +79,26 @@ fun ArchiveScreen(
             }
 
             if (datePickerOpen) {
+                val datePickerState = rememberDatePickerState(
+                    initialSelectedDateMillis = selectedDate.takeIf { it.isNotBlank() }
+                        ?.let { java.time.LocalDate.parse(it) }
+                        ?.atStartOfDay(java.time.ZoneId.systemDefault())
+                        ?.toInstant()?.toEpochMilli()
+                )
                 DatePickerDialog(
                     onDismissRequest = { datePickerOpen = false },
                     confirmButton = {
-                        TextButton(onClick = { datePickerOpen = false }) { Text("Done") }
+                        TextButton(onClick = {
+                            datePickerOpen = false
+                            datePickerState.selectedDateMillis?.let { millis ->
+                                val date = java.time.Instant.ofEpochMilli(millis)
+                                    .atZone(java.time.ZoneId.systemDefault()).toLocalDate()
+                                onDateSelected(DateUtils.isoDate(date))
+                            }
+                        }) { Text("Done") }
                     }
                 ) {
-                    val datePickerState = rememberDatePickerState()
                     DatePicker(state = datePickerState)
-                    LaunchedEffect(datePickerState.selectedDateMillis) {
-                        datePickerState.selectedDateMillis?.let { millis ->
-                            val date = java.time.Instant.ofEpochMilli(millis).atZone(java.time.ZoneId.systemDefault()).toLocalDate()
-                            onDateSelected(DateUtils.isoDate(date))
-                        }
-                    }
                 }
             }
 
@@ -111,7 +116,7 @@ fun ArchiveScreen(
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    items(entries) { entry ->
+                    items(entries, key = { it.id }) { entry ->
                         Card(
                             onClick = { onEntryClick(entry) },
                             shape = RoundedCornerShape(16.dp),

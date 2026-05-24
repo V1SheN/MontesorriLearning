@@ -59,7 +59,7 @@ fun TodayEntriesScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(entries) { entry ->
+                items(entries, key = { it.id }) { entry ->
                     EntryCard(
                         entry = entry,
                         onClick = { onEntryClick(entry) }

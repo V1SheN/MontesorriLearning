@@ -63,7 +63,7 @@ router.post('/upload', authenticate, requireRole('teacher', 'admin'), upload.sin
     const count = parseInt(countResult.count, 10);
     const max = 50;
 
-    if (count >= max && !req.headers['x-override-limit']) {
+    if (count >= max && req.headers['x-override-limit'] !== 'true') {
       return res.status(429).json({ status: 'limit_reached', count, max });
     }
 

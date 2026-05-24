@@ -18,7 +18,14 @@ const dailySummaryRoutes = require('./routes/dailySummary');
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',')
+  : ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:5173'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 app.use(express.json());
 
 const limiter = rateLimit({

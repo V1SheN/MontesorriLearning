@@ -72,6 +72,7 @@ CREATE TABLE work_entries (
     )),
     title           TEXT NOT NULL DEFAULT '',
     teacher_comment TEXT NOT NULL DEFAULT '',
+    deleted_at      TIMESTAMPTZ,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 

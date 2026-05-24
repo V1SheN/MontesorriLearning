@@ -148,7 +148,7 @@ router.post('/', authenticate, requireRole('teacher', 'admin'), async (req, res,
         io.to(`parent:${parentId}`).emit('new_entry', {
           childName: child.name,
           title: entry.title,
-          thumbnailUrl: media && media.length > 0 ? media[0].thumbnailKey : null,
+          thumbnailUrl: entryWithMedia.media.length > 0 ? entryWithMedia.media[0].thumbnailKey : null,
           teacherComment: entry.teacher_comment,
           entryId: entry.id,
           createdAt: entry.created_at,

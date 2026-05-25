@@ -33,6 +33,8 @@ data class UploadResponse(
 
 data class DailyCount(val childId: String, val date: String, val count: Int, val max: Int)
 
+data class ChildDailyCount(val childId: String, val childName: String, val date: String, val count: Int, val max: Int)
+
 data class DailySummary(val date: String, val classroomId: String?, val entries: List<WorkEntry>, val totalEntries: Int, val totalPhotos: Int)
 
 data class MessageRequest(val subject: String?, val body: String, val classroomId: String?)
@@ -76,6 +78,9 @@ interface ApiService {
         @Part("isCover") isCover: RequestBody?,
         @Header("X-Override-Limit") overrideLimit: String?
     ): UploadResponse
+
+    @GET("api/daily-counts")
+    suspend fun getDailyCounts(@Query("classroomId") classroomId: String? = null): List<ChildDailyCount>
 
     @GET("api/daily-count/{childId}")
     suspend fun getDailyCount(@Path("childId") childId: String): DailyCount

@@ -1,10 +1,21 @@
 require('dotenv').config();
 
+const pino = require('pino')();
+
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION:', err);
+  pino.error({ err }, 'UNCAUGHT EXCEPTION');
+  process.exit(1);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('UNHANDLED REJECTION:', reason);
+  pino.error({ reason }, 'UNHANDLED REJECTION');
+});
+
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const pino = require('pino')();
 const { initSocket } = require('./websocket');
 const { initBuckets } = require('./routes/upload');
 
@@ -15,12 +26,17 @@ const uploadRoutes = require('./routes/upload');
 const messagesRoutes = require('./routes/messages');
 const classroomsRoutes = require('./routes/classrooms');
 const dailySummaryRoutes = require('./routes/dailySummary');
+const dailyCountsRoutes = require('./routes/dailyCounts');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
 const allowedOrigins = process.env.CORS_ORIGINS
   ? process.env.CORS_ORIGINS.split(',')
   : ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:5173'];
+
+// Trust proxy for rate limiter behind reverse proxy
+app.set('trust proxy', 1);
 
 app.use(cors({
   origin: allowedOrigins,
@@ -33,6 +49,7 @@ const limiter = rateLimit({
   max: 100,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
 });
 app.use(limiter);
 
@@ -48,6 +65,8 @@ app.use('/api', uploadRoutes);
 app.use('/api/messages', messagesRoutes);
 app.use('/api/classrooms', classroomsRoutes);
 app.use('/api/daily-summary', dailySummaryRoutes);
+app.use('/api/daily-counts', dailyCountsRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

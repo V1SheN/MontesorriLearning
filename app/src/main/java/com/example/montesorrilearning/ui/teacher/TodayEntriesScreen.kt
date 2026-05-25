@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -34,7 +35,7 @@ fun TodayEntriesScreen(
                 title = { Text("Today's Entries") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
@@ -51,6 +52,7 @@ fun TodayEntriesScreen(
                 Text("No entries yet today", color = WarmBrown)
             }
         } else {
+            val grouped = entries.groupBy { it.childName ?: "Unknown" }
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -59,11 +61,21 @@ fun TodayEntriesScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(entries, key = { it.id }) { entry ->
-                    EntryCard(
-                        entry = entry,
-                        onClick = { onEntryClick(entry) }
-                    )
+                grouped.forEach { (childName, childEntries) ->
+                    item {
+                        Text(
+                            text = childName,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.SemiBold,
+                            color = WarmBrownDark
+                        )
+                    }
+                    items(childEntries, key = { it.id }) { entry ->
+                        EntryCard(
+                            entry = entry,
+                            onClick = { onEntryClick(entry) }
+                        )
+                    }
                 }
             }
         }

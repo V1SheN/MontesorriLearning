@@ -30,6 +30,7 @@ fun FeedScreen(
     onEntryClick: (WorkEntry) -> Unit,
     onRefresh: () -> Unit,
     onArchive: () -> Unit,
+    onShareSummary: () -> Unit,
     onMessages: () -> Unit,
     onLogout: () -> Unit
 ) {
@@ -60,7 +61,8 @@ fun FeedScreen(
                 DailySummaryCard(
                     totalEntries = totalEntries,
                     totalPhotos = totalPhotos,
-                    onArchive = onArchive
+                    onArchive = onArchive,
+                    onShareSummary = onShareSummary
                 )
             }
 
@@ -101,7 +103,8 @@ fun FeedScreen(
 private fun DailySummaryCard(
     totalEntries: Int,
     totalPhotos: Int,
-    onArchive: () -> Unit
+    onArchive: () -> Unit,
+    onShareSummary: () -> Unit
 ) {
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -130,6 +133,12 @@ private fun DailySummaryCard(
                 Icon(Icons.Default.DateRange, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(4.dp))
                 Text("Archive")
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            FilledTonalButton(onClick = onShareSummary) {
+                Icon(Icons.Default.Share, contentDescription = null, modifier = Modifier.size(18.dp))
+                Spacer(modifier = Modifier.width(4.dp))
+                Text("Share")
             }
         }
     }

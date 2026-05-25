@@ -1,25 +1,30 @@
 package com.example.montesorrilearning.ui.navigation
 
+import android.content.Intent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.montesorrilearning.ui.admin.*
 import com.example.montesorrilearning.ui.auth.AuthViewModel
 import com.example.montesorrilearning.ui.auth.LoginScreen
 import com.example.montesorrilearning.ui.messaging.MessageListScreen
 import com.example.montesorrilearning.ui.messaging.MessageThreadScreen
 import com.example.montesorrilearning.ui.messaging.MessageViewModel
 import com.example.montesorrilearning.ui.parent.ArchiveScreen
+import com.example.montesorrilearning.ui.parent.CalendarHeatmapScreen
 import com.example.montesorrilearning.ui.parent.EntryDetailScreen as ParentEntryDetailScreen
 import com.example.montesorrilearning.ui.parent.FeedScreen
 import com.example.montesorrilearning.ui.parent.ParentViewModel
+import com.example.montesorrilearning.ui.settings.NotificationSettingsScreen
 import com.example.montesorrilearning.ui.teacher.*
 
 object Routes {
@@ -33,6 +38,12 @@ object Routes {
     const val ARCHIVE = "archive"
     const val MESSAGE_LIST = "message_list"
     const val MESSAGE_THREAD = "message_thread"
+    const val ADMIN_DASHBOARD = "admin_dashboard"
+    const val ADMIN_USERS = "admin_users"
+    const val ADMIN_CLASSROOMS = "admin_classrooms"
+    const val ADMIN_ANALYTICS = "admin_analytics"
+    const val CALENDAR_HEATMAP = "calendar_heatmap"
+    const val NOTIFICATION_SETTINGS = "notification_settings"
 
     fun captureRoute(childId: String, childName: String) = "capture/$childId/$childName"
     fun teacherEntryDetail(entryId: String) = "teacher_entry_detail/$entryId"
@@ -52,6 +63,7 @@ fun NavGraph(
     val startDestination = when {
         !isLoggedIn -> Routes.LOGIN
         role == "teacher" -> Routes.TEACHER_DASHBOARD
+        role == "admin" -> Routes.ADMIN_DASHBOARD
         else -> Routes.PARENT_FEED
     }
 
@@ -62,6 +74,7 @@ fun NavGraph(
                 if (uiState.isLoggedIn) {
                     val route = when (uiState.role) {
                         "teacher" -> Routes.TEACHER_DASHBOARD
+                        "admin" -> Routes.ADMIN_DASHBOARD
                         else -> Routes.PARENT_FEED
                     }
                     navController.navigate(route) {
@@ -81,7 +94,7 @@ fun NavGraph(
             val uiState by teacherViewModel.uiState.collectAsState()
             DashboardScreen(
                 children = uiState.children,
-                dailyCounts = emptyMap(),
+                dailyCounts = uiState.dailyCounts,
                 onChildClick = { child ->
                     teacherViewModel.selectChild(child)
                     navController.navigate(Routes.captureRoute(child.id, child.name))
@@ -170,6 +183,7 @@ fun NavGraph(
         }
 
         composable(Routes.PARENT_FEED) {
+            val context = LocalContext.current
             val uiState by parentViewModel.uiState.collectAsState()
             FeedScreen(
                 feedEntries = uiState.feedEntries,
@@ -181,6 +195,14 @@ fun NavGraph(
                 },
                 onRefresh = { parentViewModel.loadFeed() },
                 onArchive = { navController.navigate(Routes.ARCHIVE) },
+                onShareSummary = {
+                    val text = "Today: ${uiState.dailySummary?.totalEntries ?: 0} entries, ${uiState.dailySummary?.totalPhotos ?: 0} photos"
+                    val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+                        type = "text/plain"
+                        putExtra(android.content.Intent.EXTRA_TEXT, text)
+                    }
+                    context.startActivity(android.content.Intent.createChooser(intent, "Share Summary"))
+                },
                 onMessages = {
                     messageViewModel.loadMessages()
                     navController.navigate(Routes.MESSAGE_LIST)
@@ -199,6 +221,7 @@ fun NavGraph(
             route = Routes.PARENT_ENTRY_DETAIL,
             arguments = listOf(navArgument("entryId") { type = NavType.StringType })
         ) { backStackEntry ->
+            val context = LocalContext.current
             val entryId = backStackEntry.arguments?.getString("entryId") ?: ""
             val uiState by parentViewModel.uiState.collectAsState()
             val entry = uiState.selectedEntry
@@ -211,7 +234,15 @@ fun NavGraph(
                         parentViewModel.clearSelection()
                         navController.popBackStack()
                     },
-                    onShare = { /* share intent */ }
+                    onShare = {
+                        val sendIntent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(Intent.EXTRA_TEXT, "Check out ${entry.title} from ${entry.childName}!\n\n${entry.teacherComment}")
+                            type = "text/plain"
+                        }
+                        val shareIntent = Intent.createChooser(sendIntent, null)
+                        context.startActivity(shareIntent)
+                    }
                 )
             } else {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -258,6 +289,43 @@ fun NavGraph(
                 onBack = { navController.popBackStack() },
                 sendSuccess = uiState.sendSuccess
             )
+        }
+
+        composable(Routes.ADMIN_DASHBOARD) {
+            AdminDashboardScreen(
+                onNavigateToUsers = { navController.navigate(Routes.ADMIN_USERS) },
+                onNavigateToClassrooms = { navController.navigate(Routes.ADMIN_CLASSROOMS) },
+                onNavigateToAnalytics = { navController.navigate(Routes.ADMIN_ANALYTICS) },
+                onLogout = {
+                    authViewModel.logout()
+                    navController.navigate(Routes.LOGIN) {
+                        popUpTo(0) { inclusive = true }
+                    }
+                }
+            )
+        }
+
+        composable(Routes.ADMIN_USERS) {
+            UsersScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Routes.ADMIN_CLASSROOMS) {
+            ClassroomsScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Routes.ADMIN_ANALYTICS) {
+            AnalyticsScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Routes.CALENDAR_HEATMAP) {
+            CalendarHeatmapScreen(
+                onBack = { navController.popBackStack() },
+                onDateSelected = { date -> parentViewModel.loadArchive(date) }
+            )
+        }
+
+        composable(Routes.NOTIFICATION_SETTINGS) {
+            NotificationSettingsScreen(onBack = { navController.popBackStack() })
         }
     }
 }

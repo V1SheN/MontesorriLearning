@@ -1,85 +1,100 @@
 # Montessori Learning — Project TODO
 
+Status: ✅ Done  ⚠️ Partial  ❌ Missing
+
 ## Phase 0: Backend & Infrastructure
 
-- [ ] Choose backend: Firebase vs custom Node.js/PostgreSQL
-- [ ] Set up Firebase project (Auth, Firestore, Storage, FCM)
-- [ ] Define data models (User, Child, WorkEntry, Message, Classroom)
-- [ ] Implement REST API or Firebase security rules
+- [x] Choose backend: custom Node.js/Express + PostgreSQL (rejected Firebase)
+- [x] Define data models (User, Child, WorkEntry, Message, Classroom)
+- [x] Implement REST API (7 route files: auth, children, classrooms, workEntries, upload, messages, dailySummary)
 - [ ] Set up CI/CD (GitHub Actions)
 - [ ] Create dev/staging/prod environments
 
 ## Phase 1: Android — Auth & Onboarding
 
-- [ ] Replace existing coloring app code with new project structure
-- [ ] Implement Firebase Auth (email + password, Google Sign-In)
-- [ ] Role-based navigation: Teacher flow vs Parent flow vs Admin flow
+- [x] Replace existing coloring app code with new project structure
+- [x] Email/password auth via custom JWT backend
+- [ ] Google Sign-In
+- [x] Role-based navigation: Teacher flow vs Parent flow
+- [x] Admin flow navigation (AdminDashboardScreen + Users/Classrooms/Analytics stubs)
 - [ ] Profile setup screen (name, phone, classroom selection)
-- [ ] Child profile creation (admin/teacher only)
+- [x] Server: Child profile creation API (teacher/admin)
+- [ ] Android: Child profile creation UI
 
-## Phase 2: Android — Teacher Daily Work Capture
+## Phase 2: Teacher Daily Work Capture
 
-### Core Capture Flow (photo + comment per entry)
-- [ ] Classroom dashboard — grid of children with avatars + today's entry count per child
-- [ ] Camera integration (CameraX) — photo capture with preview
-- [ ] Title field — name the work (e.g. "Pink Tower")
-- [ ] Montessori area picker (Practical Life, Sensorial, Language, Math, Cultural)
-- [ ] Teacher observation/comment text field (free text, 1-3 sentences)
-- [ ] Multiple photos per entry (different angles, progress stages)
-- [ ] Photo review — swipe through, delete, reorder, set cover image
-- [ ] Upload queue with progress indicators per photo
-- [ ] Offline support — save drafts to Room, sync when online via WorkManager
-- [ ] Today's entries list — quick view of all entries captured today, grouped by child
+- [x] Server: Work entries CRUD with media support
+- [x] Classroom dashboard — grid of children
+- [x] Dashboard: populate daily counts from API (TeacherViewModel → dailyCounts endpoint)
+- [x] Camera integration (CameraX) — photo capture with preview
+- [x] Title field — name the work
+- [x] Montessori area picker (5 areas)
+- [x] Teacher observation/comment text field
+- [x] Multiple photos per entry
+- [x] Photo review — delete photos
+- [ ] Photo review — swipe gestures, reorder, set cover image
+- [x] Upload progress indicator (global)
+- [ ] Upload queue with per-photo progress
+- [x] Room database for offline drafts
+- [ ] WorkManager sync for pending uploads (UploadWorker stub created)
+- [x] Today's entries list
+- [x] Today's entries: group by child
 
 ### Daily Upload Limit (50 images/child/day)
-- [ ] Server: `COUNT` query on `media` by child+date before each upload
-- [ ] Server: `X-Daily-Count` and `X-Daily-Max` response headers on upload
-- [ ] Server: `GET /api/daily-count/:childId` endpoint
-- [ ] Client: check daily count before starting capture
-- [ ] Client: show warning dialog when limit reached with "Upload Anyway" option
-- [ ] Client: `X-Override-Limit` header when teacher overrides
+- [x] Server: COUNT query before each upload
+- [x] Server: X-Daily-Count / X-Daily-Max headers
+- [x] Server: GET /api/daily-count/:childId endpoint
+- [x] Client: check daily count before capture
+- [x] Client: warning dialog with "Upload Anyway" override
+- [x] Client: X-Override-Limit header
 
-## Phase 3: Android — Parent Daily Feed
+## Phase 3: Parent Daily Feed
 
-- [ ] Today's feed — chronological list of entries with photo thumbnail + title + comment
-- [ ] Entry detail card — full-size photo, Montessori area badge, teacher comment, timestamp
-- [ ] Multi-photo viewer — swipe between photos of same entry, pinch-to-zoom
-- [ ] Push notifications (ntfy) — instant alert when new entry posted: "{child} — {title}"
-- [ ] Daily summary card at top — "3 entries today · 5 photos" with share button
-- [ ] Historical archive — date picker to view past days, grouped by date
-- [ ] Calendar heatmap — visual overview of how many entries per day this month
-- [ ] Share single entry — via WhatsApp deep link or system share sheet
+- [x] Today's feed — chronological list with thumbnail + title + comment
+- [x] Entry detail card — full-size photo, area badge, timestamp
+- [x] Multi-photo viewer (vertical list)
+- [ ] Multi-photo viewer: swipe between photos, pinch-to-zoom
+- [x] Push notifications (ntfy) — instant alert on new entry
+- [x] Daily summary card (entries + photos count)
+- [ ] Share button on daily summary card
+- [x] Historical archive — date picker to view past days
+- [ ] Calendar heatmap (stub screen created)
+- [x] Share single entry via system share sheet
+- [ ] WhatsApp deep link sharing
 
-## Phase 4: Android — Messaging System
+## Phase 4: Messaging
 
-- [ ] In-app chat: teacher ↔ parent, teacher ↔ class group
-- [ ] Admin broadcast to all parents
+- [x] Server: send messages (individual, class, all)
+- [x] Android: message compose UI (subject + body)
+- [ ] Android: specify individual recipient or broadcast
 - [ ] Message threading per child or classroom
-- [ ] Read receipts
-- [ ] Push notification for new messages
+- [x] Read receipts
+- [x] Push notification for new messages
 
-## Phase 5: WhatsApp & Email Integration
+## Phase 5: WhatsApp & Email
 
-- [ ] WhatsApp deep link sharing — share individual entries via `wa.me`
-- [ ] WhatsApp Business API — daily digest opt-in, broadcast announcements
-- [ ] Email integration (SendGrid/SES) — daily/weekly portfolio digests
-- [ ] Email templates for work summaries and announcements
-- [ ] Notification preferences per parent (push / whatsapp / email / all)
+- [ ] WhatsApp deep link — share entries via wa.me
+- [ ] WhatsApp Business API — digest opt-in, broadcasts
+- [ ] Email integration (SendGrid/SES)
+- [ ] Email templates for summaries
+- [x] Database schema: notification preferences per parent
+- [ ] Android: notification preferences UI (stub screen created)
 
 ## Phase 6: Admin Panel
 
-- [ ] User management (teachers, parents, children)
-- [ ] Classroom creation and assignment
-- [ ] Broadcast messaging
-- [ ] Analytics — entries per day, active users, message volume
+- [ ] User management (stub admin screen created)
+- [ ] Classroom creation and assignment (server: GET only, POST/PUT/DELETE stubs)
+- [x] Broadcast messaging (server: recipientType=all)
+- [ ] Android: broadcast messaging UI
+- [ ] Analytics dashboard (server stub + admin stub screen)
 - [ ] Audit log
 
 ## Phase 7: Polish & Launch
 
-- [ ] UI/UX review — kid-appropriate design, accessibility
-- [ ] Performance — image/video compression, caching
-- [ ] Security audit — data privacy, GDPR/COPPA compliance
-- [ ] Testing — unit tests, UI tests, beta testing with school
-- [ ] App store assets — screenshots, descriptions, privacy policy
-- [ ] Play Store release (Android)
-- [ ] App Store release (macOS)
+- [ ] UI/UX review
+- [x] Image compression (Sharp: 1600px, 80% quality, thumbnails)
+- [ ] Client-side caching strategy
+- [ ] Security audit
+- [ ] Unit tests / UI tests
+- [ ] App store assets
+- [ ] Play Store release

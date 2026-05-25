@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.montesorrilearning.data.repository.ChildRepository
 import com.example.montesorrilearning.data.repository.WorkRepository
+import com.example.montesorrilearning.data.remote.ChildDailyCount
 import com.example.montesorrilearning.data.remote.DailyCount
 import com.example.montesorrilearning.domain.model.Child
 import com.example.montesorrilearning.domain.model.WorkEntry
@@ -19,7 +20,7 @@ import javax.inject.Inject
 data class TeacherUiState(
     val children: List<Child> = emptyList(),
     val todayEntries: List<WorkEntry> = emptyList(),
-    val dailyCounts: Map<String, DailyCount> = emptyMap(),
+    val dailyCounts: Map<String, Int> = emptyMap(),
     val capturedPhotos: List<Uri> = emptyList(),
     val currentChild: Child? = null,
     val title: String = "",
@@ -49,10 +50,24 @@ class TeacherViewModel @Inject constructor(
             childRepository.getChildren().fold(
                 onSuccess = { children ->
                     _uiState.value = _uiState.value.copy(children = children, isLoading = false)
+                    loadDailyCounts(null)
                 },
                 onFailure = { e ->
                     _uiState.value = _uiState.value.copy(error = e.message, isLoading = false)
                 }
+            )
+        }
+    }
+
+    fun loadDailyCounts(classroomId: String?) {
+        viewModelScope.launch {
+            workRepository.getDailyCounts(classroomId).fold(
+                onSuccess = { counts ->
+                    _uiState.value = _uiState.value.copy(
+                        dailyCounts = counts.associate { it.childId to it.count }
+                    )
+                },
+                onFailure = { /* ignore */ }
             )
         }
     }

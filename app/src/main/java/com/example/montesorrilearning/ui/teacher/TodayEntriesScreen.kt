@@ -1,5 +1,7 @@
 package com.example.montesorrilearning.ui.teacher
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,7 +21,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.WorkEntry
-import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -38,7 +39,10 @@ fun TodayEntriesScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                )
             )
         }
     ) { padding ->
@@ -49,7 +53,7 @@ fun TodayEntriesScreen(
                     .padding(padding),
                 contentAlignment = Alignment.Center
             ) {
-                Text("No entries yet today", color = WarmBrown)
+                Text("No entries yet today", color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         } else {
             val grouped = entries.groupBy { it.childName ?: "Unknown" }
@@ -57,7 +61,7 @@ fun TodayEntriesScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(padding)
-                    .background(SurfaceLight),
+                    .background(MaterialTheme.colorScheme.background),
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
@@ -67,14 +71,22 @@ fun TodayEntriesScreen(
                             text = childName,
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.SemiBold,
-                            color = WarmBrownDark
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                     items(childEntries, key = { it.id }) { entry ->
-                        EntryCard(
-                            entry = entry,
-                            onClick = { onEntryClick(entry) }
-                        )
+                        AnimatedVisibility(
+                            visible = true,
+                            enter = fadeIn(animationSpec = tween(400)) + slideInVertically(
+                                animationSpec = tween(400),
+                                initialOffsetY = { it / 4 }
+                            )
+                        ) {
+                            EntryCard(
+                                entry = entry,
+                                onClick = { onEntryClick(entry) }
+                            )
+                        }
                     }
                 }
             }
@@ -90,13 +102,14 @@ private fun EntryCard(
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = CardBackground),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp)
+                .animateContentSize()
         ) {
             val thumbnailUrl = entry.media.firstOrNull()?.thumbnailKey
             AsyncImage(
@@ -115,23 +128,23 @@ private fun EntryCard(
                     text = entry.childName ?: "Child",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
-                    color = WarmBrownDark
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     text = entry.title,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = WarmBrown
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Text(
                     text = entry.montessoriArea,
                     style = MaterialTheme.typography.labelSmall,
-                    color = SoftGreenDark
+                    color = MaterialTheme.colorScheme.primary
                 )
                 if (entry.teacherComment.isNotBlank()) {
                     Text(
                         text = entry.teacherComment,
                         style = MaterialTheme.typography.bodySmall,
-                        color = OnSurfaceLight,
+                        color = MaterialTheme.colorScheme.onSurface,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -139,12 +152,12 @@ private fun EntryCard(
                 Text(
                     text = DateUtils.formatTime(entry.createdAt),
                     style = MaterialTheme.typography.labelSmall,
-                    color = WarmBrown.copy(alpha = 0.6f)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
                 )
             }
 
             if (entry.media.size > 1) {
-                Icon(Icons.Default.Collections, contentDescription = "Multiple photos", modifier = Modifier.size(16.dp), tint = WarmBrown)
+                Icon(Icons.Default.Collections, contentDescription = "Multiple photos", modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
     }

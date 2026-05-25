@@ -114,7 +114,7 @@ router.post('/', authenticate, requireRole('teacher', 'admin'), async (req, res,
       return entry;
     });
 
-    const [entryWithMedia] = await knex('work_entries as e')
+    const entryWithMedia = await knex('work_entries as e')
       .select(
         'e.*',
         knex.raw(

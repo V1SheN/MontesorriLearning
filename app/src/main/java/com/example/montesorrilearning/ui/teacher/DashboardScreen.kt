@@ -1,5 +1,7 @@
 package com.example.montesorrilearning.ui.teacher
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -18,7 +20,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.montesorrilearning.domain.model.Child
-import com.example.montesorrilearning.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,8 +40,8 @@ fun DashboardScreen(
                     TextButton(onClick = onLogout) { Text("Logout") }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = WarmCream,
-                    titleContentColor = WarmBrownDark
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
                 )
             )
         }
@@ -49,14 +50,14 @@ fun DashboardScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(SurfaceLight)
+                .background(MaterialTheme.colorScheme.background)
         ) {
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
                 text = "Select a child to capture work",
                 style = MaterialTheme.typography.bodyLarge,
-                color = WarmBrown,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
 
@@ -67,7 +68,7 @@ fun DashboardScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("No children in your class yet", color = WarmBrown)
+                    Text("No children in your class yet", color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             } else {
                 LazyVerticalGrid(
@@ -76,12 +77,20 @@ fun DashboardScreen(
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    items(children) { child ->
-                        ChildCard(
-                            child = child,
-                            todayCount = dailyCounts[child.id] ?: 0,
-                            onClick = { onChildClick(child) }
-                        )
+                    items(children, key = { it.id }) { child ->
+                        AnimatedVisibility(
+                            visible = true,
+                            enter = fadeIn(animationSpec = tween(400)) + slideInVertically(
+                                animationSpec = tween(400),
+                                initialOffsetY = { it / 4 }
+                            )
+                        ) {
+                            ChildCard(
+                                child = child,
+                                todayCount = dailyCounts[child.id] ?: 0,
+                                onClick = { onChildClick(child) }
+                            )
+                        }
                     }
                 }
             }
@@ -111,9 +120,10 @@ private fun ChildCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick),
-        shape = MaterialTheme.shapes.medium,
-        colors = CardDefaults.cardColors(containerColor = CardBackground),
+            .clickable(onClick = onClick)
+            .animateContentSize(),
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(
@@ -126,14 +136,14 @@ private fun ChildCard(
                 modifier = Modifier
                     .size(64.dp)
                     .clip(CircleShape)
-                    .background(SoftGreen.copy(alpha = 0.3f)),
+                    .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     Icons.Default.Person,
                     contentDescription = null,
                     modifier = Modifier.size(32.dp),
-                    tint = WarmBrownDark
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
 
@@ -144,13 +154,13 @@ private fun ChildCard(
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center,
-                color = WarmBrownDark
+                color = MaterialTheme.colorScheme.onSurface
             )
 
             Text(
                 text = "$todayCount today",
                 style = MaterialTheme.typography.labelMedium,
-                color = SoftOrangeDark
+                color = MaterialTheme.colorScheme.secondary
             )
         }
     }

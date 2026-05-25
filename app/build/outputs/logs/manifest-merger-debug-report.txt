@@ -1,50 +1,99 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-28:12
-MERGED from [com.google.android.material:material:1.11.0] /home/fish/.gradle/caches/8.13/transforms/2d8c19813d03447707870272a24cebd7/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/fish/.gradle/caches/8.13/transforms/353eada676ec971eb5a7e8043b937025/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9c1c3dfd1ebf04e9f11ea12d5fa4aad6/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/7a1e6e2798d26a1ff8b4774b8cea4f05/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7cd81efed70acf4fd99ac65fa3cf86f9/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.3.6] /home/fish/.gradle/caches/8.13/transforms/c68f0728b11ff279fa8d44cac15e7dca/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.8.0] /home/fish/.gradle/caches/8.13/transforms/61345efda0efa34f5d916510fcff46d6/transformed/jetified-activity-1.8.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/4f1f051e539600e8599b3e07b6a9bd79/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/fish/.gradle/caches/8.13/transforms/63e56b942f418bbc8e7b9f86b37d7196/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fish/.gradle/caches/8.13/transforms/c4c75c02296b19feea0d72f8b9bb4e57/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fish/.gradle/caches/8.13/transforms/753a897d609d46c136aa34507b3a765f/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fish/.gradle/caches/8.13/transforms/2a9512ca87f7f6178b2f84dcec2d612b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.transition:transition:1.2.0] /home/fish/.gradle/caches/8.13/transforms/5a975e05521c4f653286260acd7552a0/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/c9568db9626fdf46210802a02de10894/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/5d37cd3a1e53e6811c6e05ae0162ab90/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0096bac308501b2a1f6e33a5304ee06d/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fish/.gradle/caches/8.13/transforms/67aaa2d127ef547c8e6689369418fedf/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7731c9bfb7dd22852e3c2cf6139b4032/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/9752473249e65048d1ece93df56f4272/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/0a58e21735f2390724ccd33c4e2f1da6/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/98b19d8be25f58dc19da427ea6a5692d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/fish/.gradle/caches/8.13/transforms/991cff52a3c762a84822c0829b2ae7df/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71732ab61bc61fe3f8121063fb00917b/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/fish/.gradle/caches/8.13/transforms/32dbc264d9e4d89c10a5ca57177a6d82/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/290d1a59f88479841c28f51b969101f4/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c41c00d28f8dae5838c8e2e93a1100e9/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/fish/.gradle/caches/8.13/transforms/4894f6272978a9d5075034d6d9a1fa47/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a42d98b692a3df363306c95495c6f09/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bbf51f6ea8967cea8a6dbd63103d6800/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/896406b75d546a2945d4ab6962251ec8/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/8668b0274b0505985baa084bcd7750b8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ac724ae8c9ab2067b938e837e5362f46/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/a37dad5e9923c6bd43044b47dcb122e4/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c5bb3684c0f6abf6497f2b5c5ee14931/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c46fa033dde8a319357f4f91ebc8ad8c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a7d1262b269625b8e72b7550b6b42b4/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/fish/.gradle/caches/8.13/transforms/176435d2a0e4d5e6c8b2d62a7e46fc54/transformed/jetified-hilt-navigation-compose-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3e8d88e10a44295052f420eabd742657/transformed/jetified-hilt-navigation-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/fish/.gradle/caches/8.13/transforms/245cfe0d8489b760942b28c600827ff0/transformed/navigation-common-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/fish/.gradle/caches/8.13/transforms/602d7c9145d159896c5c249ac4de77db/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/e5a64c53e091c091d421424474732bff/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/77fa12b2f9dd10b021e157111972f6b9/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/fish/.gradle/caches/8.13/transforms/4b172f8d9487345585dac96487c9c161/transformed/jetified-navigation-compose-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-work:1.2.0] /home/fish/.gradle/caches/8.13/transforms/d45226e72cb516af46778c43d238686c/transformed/jetified-hilt-work-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:hilt-android:2.50] /home/fish/.gradle/caches/8.13/transforms/2e73f400b631191a84f55cbefe8f47bb/transformed/jetified-hilt-android-2.50/AndroidManifest.xml:16:1-19:12
+MERGED from [androidx.camera:camera-video:1.3.1] /home/fish/.gradle/caches/8.13/transforms/ed54e248102832b343419ebbd00f1ba5/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-view:1.3.1] /home/fish/.gradle/caches/8.13/transforms/6f5e0359ded243b012fec96c752a3fde/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /home/fish/.gradle/caches/8.13/transforms/16a736f58b984e8cf0a0dc9d49fd26c3/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/fish/.gradle/caches/8.13/transforms/603fefdf38ee54a44517c6277535b417/transformed/jetified-material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/fish/.gradle/caches/8.13/transforms/28ef5323a3513d2a2db76c377cf61a15/transformed/jetified-coil-compose-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/709396c331534ae3c723572839a588ee/transformed/jetified-coil-compose-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8998304bf4d09063851f6b2e3ee5d527/transformed/jetified-material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/fc37226ae42a49d9f4ac3333f9652af5/transformed/jetified-material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f140c6de646c98c14a98dba6333e8ad/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/31e3ce7a3d13e4a083970e5ccecddd4b/transformed/jetified-material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/492847ecf744e88b1239cde9f6d9a6ff/transformed/jetified-animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/06117f7e263cf7d727b1adfa337a042e/transformed/jetified-animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/eaf936f7f50b0e31493bd41c35f70091/transformed/jetified-foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/5e03b5cca6b284ae2246545cbdbb65cf/transformed/jetified-foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/671e5335834911be83256f280a537735/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/6f4b7c7cfefb400bdc7fa6cf24e97dfa/transformed/jetified-ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f7937e5126a69767cae19d9a31eff71/transformed/jetified-ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8af3ca58dd236cc72c2147eaa94f61a8/transformed/jetified-ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/02d2259236b566e22ef50a9271d02c34/transformed/jetified-ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/065e06cf0e2443b71f3d7225d2278b69/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/98c9e87f0c42e5946dea1bb20eba7f04/transformed/jetified-ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [io.coil-kt:coil:2.5.0] /home/fish/.gradle/caches/8.13/transforms/bdcf6958f83d4d1cf74cad195ad4a348/transformed/jetified-coil-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/0115e6484c85d4e5f869f47595f8a6c1/transformed/jetified-coil-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/082dc4d838755e8b0c65272ede82d139/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/3918501a9a1a5e93b13d3cc8871ca15e/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.5.1] /home/fish/.gradle/caches/8.13/transforms/e3163b762c54c804f3413cfd880a8928/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/fish/.gradle/caches/8.13/transforms/765e1d206c115412b4cf604a27597122/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/359163091bf72dada24e7dcd56de414e/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] /home/fish/.gradle/caches/8.13/transforms/d3f79cd4c4cd4f0700493f89542cc95a/transformed/work-runtime-ktx-2.9.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:17:1-145:12
+MERGED from [androidx.activity:activity:1.8.2] /home/fish/.gradle/caches/8.13/transforms/1d62dcbd6f792c7df57e3ac699dcb03c/transformed/jetified-activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/5255b7a89fac0d5af2152733449fed97/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ee67b3c7ad823a114d2264034bc5bc06/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/fish/.gradle/caches/8.13/transforms/e50c0c34f527d62bda749dd79f4a73b9/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0d37ec3cb1145f6910a6fed883ea9ff9/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/f27442ceb4adb32519e942ddfa9d1318/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/626e05987ffd8e64ceb063fd1beb2a17/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/dc39be7b36e8f2e583a869fe56bc3b0d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/fish/.gradle/caches/8.13/transforms/70b2aabba3d0783eac6b0e52eb8fc6be/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6c894cbfc8f207c14c3c28307ff02297/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /home/fish/.gradle/caches/8.13/transforms/f8eae331cf4d7918bb7c0e5addd43416/transformed/jetified-lifecycle-service-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/fish/.gradle/caches/8.13/transforms/a1d43ea7bee18c27bae2fa1b31994e51/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cbc6ad2f67f30c0588466f81c0a3c55c/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/fish/.gradle/caches/8.13/transforms/7c264fb15253753110791b65da95ccd8/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/fish/.gradle/caches/8.13/transforms/c53e13d4be532a46d40bea9d683d86cf/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/7e4623e1d1508af79e201a45cd8a8dfb/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/fish/.gradle/caches/8.13/transforms/d34cdf29a7933566b986d154d35facb0/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/2305f25e1a6476b16d613cf5bd89bfe8/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/8ddf5cfceeb74ff19ea86801a1f7e3a9/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/fish/.gradle/caches/8.13/transforms/43aa9fca2820d735f8a244d7b4bb4e76/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/b4c5a19192bcb839018783b1b76feb53/transformed/jetified-lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6f55025e21f8f9a493f45a3da0a79f0a/transformed/jetified-lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/fish/.gradle/caches/8.13/transforms/8d4c8b04254f1fe2e7497a201eb0a889/transformed/jetified-accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/401d9424176a0beb08139d5d7e19ce5b/transformed/jetified-ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/fish/.gradle/caches/8.13/transforms/932273d59872420919eba283094a8125/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/fish/.gradle/caches/8.13/transforms/5f3a49e9a95942791cdb0c36b1b94b40/transformed/jetified-activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71193ef4be41ed48d8b4f1f837b24fb5/transformed/jetified-room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /home/fish/.gradle/caches/8.13/transforms/57a2b1a3dd5a9c2df09f88e9e39fd17c/transformed/jetified-datastore-preferences-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/fish/.gradle/caches/8.13/transforms/2032d47d95d9aad115262c404f70f0d9/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/fish/.gradle/caches/8.13/transforms/061f62c7b5df7642f2f1b06269d1460e/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore:1.0.0] /home/fish/.gradle/caches/8.13/transforms/fc5567e9f350b848ca742c7c73e66e35/transformed/jetified-datastore-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/cfa95a1f1cc2c9d9afa4e92e4e86aefb/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/89f139895313c2b2e3136a0208fae2dd/transformed/jetified-runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/fish/.gradle/caches/8.13/transforms/3db960996328083e286c44a397b45731/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/a307ed7733c1569c5d25af018d93c024/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/5863b53791f5e3babc7752c9b91383e6/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bb988fbbcf1993270653f5cd5428bf26/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ad45c5a6f46b63eeca4bedcc9b8a1104/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/fish/.gradle/caches/8.13/transforms/9995d76a4985c225a5e8b3ba274b7aab/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0356743dbf79f221ff1146742a99ebfd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /home/fish/.gradle/caches/8.13/transforms/890d67dadfc00613583043fcb5ee11ba/transformed/jetified-dagger-lint-aar-2.50/AndroidManifest.xml:16:1-19:12
 	package
 		INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -55,244 +104,632 @@ MERGED from [androidx.print:print:1.0.0] /home/fish/.gradle/caches/8.13/transfor
 		INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:2:11-69
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:5:5-81
+uses-feature#android.hardware.camera
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:5:5-85
+	android:required
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:5:58-82
 	android:name
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:5:22-78
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:5:19-57
+uses-permission#android.permission.CAMERA
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.INTERNET
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:9:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:9:22-76
 application
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:7:5-26:19
-INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:7:5-26:19
-MERGED from [com.google.android.material:material:1.11.0] /home/fish/.gradle/caches/8.13/transforms/2d8c19813d03447707870272a24cebd7/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.11.0] /home/fish/.gradle/caches/8.13/transforms/2d8c19813d03447707870272a24cebd7/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/fish/.gradle/caches/8.13/transforms/353eada676ec971eb5a7e8043b937025/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/fish/.gradle/caches/8.13/transforms/353eada676ec971eb5a7e8043b937025/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
-MERGED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/8668b0274b0505985baa084bcd7750b8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/8668b0274b0505985baa084bcd7750b8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:11:5-31:19
+INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:11:5-31:19
+MERGED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/a307ed7733c1569c5d25af018d93c024/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/a307ed7733c1569c5d25af018d93c024/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
 		INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:12:9-41
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:17:9-41
 	android:fullBackupContent
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:15:9-54
 	android:roundIcon
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:13:9-54
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:19:9-54
 	tools:targetApi
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:16:9-29
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:22:9-29
 	android:icon
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:15:9-56
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:21:9-56
+	android:networkSecurityConfig
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:18:9-69
 	android:dataExtractionRules
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:9:9-65
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:14:9-65
+	android:name
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:12:9-38
 activity#com.example.montesorrilearning.MainActivity
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:17:9-25:20
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:23:9-30:20
 	android:exported
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:19:13-36
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:18:13-41
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:24:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:20:13-24:29
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:26:13-29:29
 action#android.intent.action.MAIN
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:23:17-77
+ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:23:27-74
+		ADDED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml:28:27-74
 uses-sdk
 INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
 INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
-MERGED from [com.google.android.material:material:1.11.0] /home/fish/.gradle/caches/8.13/transforms/2d8c19813d03447707870272a24cebd7/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.11.0] /home/fish/.gradle/caches/8.13/transforms/2d8c19813d03447707870272a24cebd7/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/fish/.gradle/caches/8.13/transforms/353eada676ec971eb5a7e8043b937025/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/fish/.gradle/caches/8.13/transforms/353eada676ec971eb5a7e8043b937025/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9c1c3dfd1ebf04e9f11ea12d5fa4aad6/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9c1c3dfd1ebf04e9f11ea12d5fa4aad6/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/7a1e6e2798d26a1ff8b4774b8cea4f05/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/7a1e6e2798d26a1ff8b4774b8cea4f05/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7cd81efed70acf4fd99ac65fa3cf86f9/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7cd81efed70acf4fd99ac65fa3cf86f9/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] /home/fish/.gradle/caches/8.13/transforms/c68f0728b11ff279fa8d44cac15e7dca/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] /home/fish/.gradle/caches/8.13/transforms/c68f0728b11ff279fa8d44cac15e7dca/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.8.0] /home/fish/.gradle/caches/8.13/transforms/61345efda0efa34f5d916510fcff46d6/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.0] /home/fish/.gradle/caches/8.13/transforms/61345efda0efa34f5d916510fcff46d6/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/4f1f051e539600e8599b3e07b6a9bd79/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/4f1f051e539600e8599b3e07b6a9bd79/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/fish/.gradle/caches/8.13/transforms/63e56b942f418bbc8e7b9f86b37d7196/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/fish/.gradle/caches/8.13/transforms/63e56b942f418bbc8e7b9f86b37d7196/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fish/.gradle/caches/8.13/transforms/c4c75c02296b19feea0d72f8b9bb4e57/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fish/.gradle/caches/8.13/transforms/c4c75c02296b19feea0d72f8b9bb4e57/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fish/.gradle/caches/8.13/transforms/753a897d609d46c136aa34507b3a765f/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fish/.gradle/caches/8.13/transforms/753a897d609d46c136aa34507b3a765f/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fish/.gradle/caches/8.13/transforms/2a9512ca87f7f6178b2f84dcec2d612b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fish/.gradle/caches/8.13/transforms/2a9512ca87f7f6178b2f84dcec2d612b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.transition:transition:1.2.0] /home/fish/.gradle/caches/8.13/transforms/5a975e05521c4f653286260acd7552a0/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] /home/fish/.gradle/caches/8.13/transforms/5a975e05521c4f653286260acd7552a0/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/c9568db9626fdf46210802a02de10894/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/c9568db9626fdf46210802a02de10894/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/5d37cd3a1e53e6811c6e05ae0162ab90/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/5d37cd3a1e53e6811c6e05ae0162ab90/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0096bac308501b2a1f6e33a5304ee06d/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0096bac308501b2a1f6e33a5304ee06d/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fish/.gradle/caches/8.13/transforms/67aaa2d127ef547c8e6689369418fedf/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fish/.gradle/caches/8.13/transforms/67aaa2d127ef547c8e6689369418fedf/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7731c9bfb7dd22852e3c2cf6139b4032/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/7731c9bfb7dd22852e3c2cf6139b4032/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/9752473249e65048d1ece93df56f4272/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/9752473249e65048d1ece93df56f4272/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/0a58e21735f2390724ccd33c4e2f1da6/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] /home/fish/.gradle/caches/8.13/transforms/0a58e21735f2390724ccd33c4e2f1da6/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/98b19d8be25f58dc19da427ea6a5692d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/98b19d8be25f58dc19da427ea6a5692d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/fish/.gradle/caches/8.13/transforms/991cff52a3c762a84822c0829b2ae7df/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/fish/.gradle/caches/8.13/transforms/991cff52a3c762a84822c0829b2ae7df/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71732ab61bc61fe3f8121063fb00917b/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71732ab61bc61fe3f8121063fb00917b/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/fish/.gradle/caches/8.13/transforms/32dbc264d9e4d89c10a5ca57177a6d82/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/fish/.gradle/caches/8.13/transforms/32dbc264d9e4d89c10a5ca57177a6d82/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/290d1a59f88479841c28f51b969101f4/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/290d1a59f88479841c28f51b969101f4/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c41c00d28f8dae5838c8e2e93a1100e9/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c41c00d28f8dae5838c8e2e93a1100e9/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/fish/.gradle/caches/8.13/transforms/4894f6272978a9d5075034d6d9a1fa47/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/fish/.gradle/caches/8.13/transforms/4894f6272978a9d5075034d6d9a1fa47/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a42d98b692a3df363306c95495c6f09/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a42d98b692a3df363306c95495c6f09/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bbf51f6ea8967cea8a6dbd63103d6800/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bbf51f6ea8967cea8a6dbd63103d6800/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/896406b75d546a2945d4ab6962251ec8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/896406b75d546a2945d4ab6962251ec8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/8668b0274b0505985baa084bcd7750b8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/8668b0274b0505985baa084bcd7750b8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ac724ae8c9ab2067b938e837e5362f46/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ac724ae8c9ab2067b938e837e5362f46/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/a37dad5e9923c6bd43044b47dcb122e4/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/a37dad5e9923c6bd43044b47dcb122e4/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c5bb3684c0f6abf6497f2b5c5ee14931/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c5bb3684c0f6abf6497f2b5c5ee14931/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c46fa033dde8a319357f4f91ebc8ad8c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/c46fa033dde8a319357f4f91ebc8ad8c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a7d1262b269625b8e72b7550b6b42b4/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/fish/.gradle/caches/8.13/transforms/3a7d1262b269625b8e72b7550b6b42b4/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/fish/.gradle/caches/8.13/transforms/176435d2a0e4d5e6c8b2d62a7e46fc54/transformed/jetified-hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/fish/.gradle/caches/8.13/transforms/176435d2a0e4d5e6c8b2d62a7e46fc54/transformed/jetified-hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3e8d88e10a44295052f420eabd742657/transformed/jetified-hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3e8d88e10a44295052f420eabd742657/transformed/jetified-hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/fish/.gradle/caches/8.13/transforms/245cfe0d8489b760942b28c600827ff0/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/fish/.gradle/caches/8.13/transforms/245cfe0d8489b760942b28c600827ff0/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/fish/.gradle/caches/8.13/transforms/602d7c9145d159896c5c249ac4de77db/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/fish/.gradle/caches/8.13/transforms/602d7c9145d159896c5c249ac4de77db/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/e5a64c53e091c091d421424474732bff/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/e5a64c53e091c091d421424474732bff/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/77fa12b2f9dd10b021e157111972f6b9/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/fish/.gradle/caches/8.13/transforms/77fa12b2f9dd10b021e157111972f6b9/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/fish/.gradle/caches/8.13/transforms/4b172f8d9487345585dac96487c9c161/transformed/jetified-navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/fish/.gradle/caches/8.13/transforms/4b172f8d9487345585dac96487c9c161/transformed/jetified-navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-work:1.2.0] /home/fish/.gradle/caches/8.13/transforms/d45226e72cb516af46778c43d238686c/transformed/jetified-hilt-work-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.hilt:hilt-work:1.2.0] /home/fish/.gradle/caches/8.13/transforms/d45226e72cb516af46778c43d238686c/transformed/jetified-hilt-work-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:hilt-android:2.50] /home/fish/.gradle/caches/8.13/transforms/2e73f400b631191a84f55cbefe8f47bb/transformed/jetified-hilt-android-2.50/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.50] /home/fish/.gradle/caches/8.13/transforms/2e73f400b631191a84f55cbefe8f47bb/transformed/jetified-hilt-android-2.50/AndroidManifest.xml:18:3-42
+MERGED from [androidx.camera:camera-video:1.3.1] /home/fish/.gradle/caches/8.13/transforms/ed54e248102832b343419ebbd00f1ba5/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.3.1] /home/fish/.gradle/caches/8.13/transforms/ed54e248102832b343419ebbd00f1ba5/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /home/fish/.gradle/caches/8.13/transforms/6f5e0359ded243b012fec96c752a3fde/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /home/fish/.gradle/caches/8.13/transforms/6f5e0359ded243b012fec96c752a3fde/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /home/fish/.gradle/caches/8.13/transforms/16a736f58b984e8cf0a0dc9d49fd26c3/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /home/fish/.gradle/caches/8.13/transforms/16a736f58b984e8cf0a0dc9d49fd26c3/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/fish/.gradle/caches/8.13/transforms/603fefdf38ee54a44517c6277535b417/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/fish/.gradle/caches/8.13/transforms/603fefdf38ee54a44517c6277535b417/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/fish/.gradle/caches/8.13/transforms/28ef5323a3513d2a2db76c377cf61a15/transformed/jetified-coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/fish/.gradle/caches/8.13/transforms/28ef5323a3513d2a2db76c377cf61a15/transformed/jetified-coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/709396c331534ae3c723572839a588ee/transformed/jetified-coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/709396c331534ae3c723572839a588ee/transformed/jetified-coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8998304bf4d09063851f6b2e3ee5d527/transformed/jetified-material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8998304bf4d09063851f6b2e3ee5d527/transformed/jetified-material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/fc37226ae42a49d9f4ac3333f9652af5/transformed/jetified-material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/fc37226ae42a49d9f4ac3333f9652af5/transformed/jetified-material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f140c6de646c98c14a98dba6333e8ad/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f140c6de646c98c14a98dba6333e8ad/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/31e3ce7a3d13e4a083970e5ccecddd4b/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/31e3ce7a3d13e4a083970e5ccecddd4b/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/492847ecf744e88b1239cde9f6d9a6ff/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/492847ecf744e88b1239cde9f6d9a6ff/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/06117f7e263cf7d727b1adfa337a042e/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/06117f7e263cf7d727b1adfa337a042e/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/eaf936f7f50b0e31493bd41c35f70091/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/eaf936f7f50b0e31493bd41c35f70091/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/5e03b5cca6b284ae2246545cbdbb65cf/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/5e03b5cca6b284ae2246545cbdbb65cf/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/671e5335834911be83256f280a537735/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/671e5335834911be83256f280a537735/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/6f4b7c7cfefb400bdc7fa6cf24e97dfa/transformed/jetified-ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/6f4b7c7cfefb400bdc7fa6cf24e97dfa/transformed/jetified-ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f7937e5126a69767cae19d9a31eff71/transformed/jetified-ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/9f7937e5126a69767cae19d9a31eff71/transformed/jetified-ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8af3ca58dd236cc72c2147eaa94f61a8/transformed/jetified-ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/8af3ca58dd236cc72c2147eaa94f61a8/transformed/jetified-ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/02d2259236b566e22ef50a9271d02c34/transformed/jetified-ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/02d2259236b566e22ef50a9271d02c34/transformed/jetified-ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/065e06cf0e2443b71f3d7225d2278b69/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/065e06cf0e2443b71f3d7225d2278b69/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/98c9e87f0c42e5946dea1bb20eba7f04/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/98c9e87f0c42e5946dea1bb20eba7f04/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /home/fish/.gradle/caches/8.13/transforms/bdcf6958f83d4d1cf74cad195ad4a348/transformed/jetified-coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /home/fish/.gradle/caches/8.13/transforms/bdcf6958f83d4d1cf74cad195ad4a348/transformed/jetified-coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/0115e6484c85d4e5f869f47595f8a6c1/transformed/jetified-coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/fish/.gradle/caches/8.13/transforms/0115e6484c85d4e5f869f47595f8a6c1/transformed/jetified-coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/082dc4d838755e8b0c65272ede82d139/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/fish/.gradle/caches/8.13/transforms/082dc4d838755e8b0c65272ede82d139/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/3918501a9a1a5e93b13d3cc8871ca15e/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/fish/.gradle/caches/8.13/transforms/3918501a9a1a5e93b13d3cc8871ca15e/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.5.1] /home/fish/.gradle/caches/8.13/transforms/e3163b762c54c804f3413cfd880a8928/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /home/fish/.gradle/caches/8.13/transforms/e3163b762c54c804f3413cfd880a8928/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/fish/.gradle/caches/8.13/transforms/765e1d206c115412b4cf604a27597122/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/fish/.gradle/caches/8.13/transforms/765e1d206c115412b4cf604a27597122/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/359163091bf72dada24e7dcd56de414e/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /home/fish/.gradle/caches/8.13/transforms/359163091bf72dada24e7dcd56de414e/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] /home/fish/.gradle/caches/8.13/transforms/d3f79cd4c4cd4f0700493f89542cc95a/transformed/work-runtime-ktx-2.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] /home/fish/.gradle/caches/8.13/transforms/d3f79cd4c4cd4f0700493f89542cc95a/transformed/work-runtime-ktx-2.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/fish/.gradle/caches/8.13/transforms/1d62dcbd6f792c7df57e3ac699dcb03c/transformed/jetified-activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/fish/.gradle/caches/8.13/transforms/1d62dcbd6f792c7df57e3ac699dcb03c/transformed/jetified-activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/5255b7a89fac0d5af2152733449fed97/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/fish/.gradle/caches/8.13/transforms/5255b7a89fac0d5af2152733449fed97/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ee67b3c7ad823a114d2264034bc5bc06/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ee67b3c7ad823a114d2264034bc5bc06/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/fish/.gradle/caches/8.13/transforms/e50c0c34f527d62bda749dd79f4a73b9/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/fish/.gradle/caches/8.13/transforms/e50c0c34f527d62bda749dd79f4a73b9/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0d37ec3cb1145f6910a6fed883ea9ff9/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0d37ec3cb1145f6910a6fed883ea9ff9/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/f27442ceb4adb32519e942ddfa9d1318/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/fish/.gradle/caches/8.13/transforms/f27442ceb4adb32519e942ddfa9d1318/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/626e05987ffd8e64ceb063fd1beb2a17/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fish/.gradle/caches/8.13/transforms/626e05987ffd8e64ceb063fd1beb2a17/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/dc39be7b36e8f2e583a869fe56bc3b0d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fish/.gradle/caches/8.13/transforms/dc39be7b36e8f2e583a869fe56bc3b0d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/fish/.gradle/caches/8.13/transforms/70b2aabba3d0783eac6b0e52eb8fc6be/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/fish/.gradle/caches/8.13/transforms/70b2aabba3d0783eac6b0e52eb8fc6be/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6c894cbfc8f207c14c3c28307ff02297/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6c894cbfc8f207c14c3c28307ff02297/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /home/fish/.gradle/caches/8.13/transforms/f8eae331cf4d7918bb7c0e5addd43416/transformed/jetified-lifecycle-service-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /home/fish/.gradle/caches/8.13/transforms/f8eae331cf4d7918bb7c0e5addd43416/transformed/jetified-lifecycle-service-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/fish/.gradle/caches/8.13/transforms/a1d43ea7bee18c27bae2fa1b31994e51/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/fish/.gradle/caches/8.13/transforms/a1d43ea7bee18c27bae2fa1b31994e51/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cbc6ad2f67f30c0588466f81c0a3c55c/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cbc6ad2f67f30c0588466f81c0a3c55c/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/fish/.gradle/caches/8.13/transforms/7c264fb15253753110791b65da95ccd8/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/fish/.gradle/caches/8.13/transforms/7c264fb15253753110791b65da95ccd8/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/fish/.gradle/caches/8.13/transforms/c53e13d4be532a46d40bea9d683d86cf/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/fish/.gradle/caches/8.13/transforms/c53e13d4be532a46d40bea9d683d86cf/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/7e4623e1d1508af79e201a45cd8a8dfb/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/fish/.gradle/caches/8.13/transforms/7e4623e1d1508af79e201a45cd8a8dfb/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/fish/.gradle/caches/8.13/transforms/d34cdf29a7933566b986d154d35facb0/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/fish/.gradle/caches/8.13/transforms/d34cdf29a7933566b986d154d35facb0/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/2305f25e1a6476b16d613cf5bd89bfe8/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/2305f25e1a6476b16d613cf5bd89bfe8/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/8ddf5cfceeb74ff19ea86801a1f7e3a9/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/fish/.gradle/caches/8.13/transforms/8ddf5cfceeb74ff19ea86801a1f7e3a9/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/fish/.gradle/caches/8.13/transforms/43aa9fca2820d735f8a244d7b4bb4e76/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/fish/.gradle/caches/8.13/transforms/43aa9fca2820d735f8a244d7b4bb4e76/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/b4c5a19192bcb839018783b1b76feb53/transformed/jetified-lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/b4c5a19192bcb839018783b1b76feb53/transformed/jetified-lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6f55025e21f8f9a493f45a3da0a79f0a/transformed/jetified-lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/fish/.gradle/caches/8.13/transforms/6f55025e21f8f9a493f45a3da0a79f0a/transformed/jetified-lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/fish/.gradle/caches/8.13/transforms/8d4c8b04254f1fe2e7497a201eb0a889/transformed/jetified-accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/fish/.gradle/caches/8.13/transforms/8d4c8b04254f1fe2e7497a201eb0a889/transformed/jetified-accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/401d9424176a0beb08139d5d7e19ce5b/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/401d9424176a0beb08139d5d7e19ce5b/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/fish/.gradle/caches/8.13/transforms/932273d59872420919eba283094a8125/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/fish/.gradle/caches/8.13/transforms/932273d59872420919eba283094a8125/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/fish/.gradle/caches/8.13/transforms/5f3a49e9a95942791cdb0c36b1b94b40/transformed/jetified-activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/fish/.gradle/caches/8.13/transforms/5f3a49e9a95942791cdb0c36b1b94b40/transformed/jetified-activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71193ef4be41ed48d8b4f1f837b24fb5/transformed/jetified-room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/fish/.gradle/caches/8.13/transforms/71193ef4be41ed48d8b4f1f837b24fb5/transformed/jetified-room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /home/fish/.gradle/caches/8.13/transforms/57a2b1a3dd5a9c2df09f88e9e39fd17c/transformed/jetified-datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /home/fish/.gradle/caches/8.13/transforms/57a2b1a3dd5a9c2df09f88e9e39fd17c/transformed/jetified-datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/fish/.gradle/caches/8.13/transforms/2032d47d95d9aad115262c404f70f0d9/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/fish/.gradle/caches/8.13/transforms/2032d47d95d9aad115262c404f70f0d9/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/fish/.gradle/caches/8.13/transforms/061f62c7b5df7642f2f1b06269d1460e/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/fish/.gradle/caches/8.13/transforms/061f62c7b5df7642f2f1b06269d1460e/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore:1.0.0] /home/fish/.gradle/caches/8.13/transforms/fc5567e9f350b848ca742c7c73e66e35/transformed/jetified-datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] /home/fish/.gradle/caches/8.13/transforms/fc5567e9f350b848ca742c7c73e66e35/transformed/jetified-datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/cfa95a1f1cc2c9d9afa4e92e4e86aefb/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/cfa95a1f1cc2c9d9afa4e92e4e86aefb/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/89f139895313c2b2e3136a0208fae2dd/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/89f139895313c2b2e3136a0208fae2dd/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/fish/.gradle/caches/8.13/transforms/3db960996328083e286c44a397b45731/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/fish/.gradle/caches/8.13/transforms/3db960996328083e286c44a397b45731/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/a307ed7733c1569c5d25af018d93c024/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/fish/.gradle/caches/8.13/transforms/a307ed7733c1569c5d25af018d93c024/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/5863b53791f5e3babc7752c9b91383e6/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/fish/.gradle/caches/8.13/transforms/5863b53791f5e3babc7752c9b91383e6/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bb988fbbcf1993270653f5cd5428bf26/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fish/.gradle/caches/8.13/transforms/bb988fbbcf1993270653f5cd5428bf26/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ad45c5a6f46b63eeca4bedcc9b8a1104/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/fish/.gradle/caches/8.13/transforms/ad45c5a6f46b63eeca4bedcc9b8a1104/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/fish/.gradle/caches/8.13/transforms/9995d76a4985c225a5e8b3ba274b7aab/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/fish/.gradle/caches/8.13/transforms/9995d76a4985c225a5e8b3ba274b7aab/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0356743dbf79f221ff1146742a99ebfd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fish/.gradle/caches/8.13/transforms/0356743dbf79f221ff1146742a99ebfd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /home/fish/.gradle/caches/8.13/transforms/890d67dadfc00613583043fcb5ee11ba/transformed/jetified-dagger-lint-aar-2.50/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /home/fish/.gradle/caches/8.13/transforms/890d67dadfc00613583043fcb5ee11ba/transformed/jetified-dagger-lint-aar-2.50/AndroidManifest.xml:18:3-42
 	android:targetSdkVersion
 		INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /home/fish/Software/Development/github/MontesorriLearning/app/src/main/AndroidManifest.xml
-provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/442934f7b1482570dcadd6bade19e3a5/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
-	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
-	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-meta-data#androidx.emoji2.text.EmojiCompatInitializer
-ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-	android:value
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/fish/.gradle/caches/8.13/transforms/3fab84780e4d0225e6635fe269f5e5b8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-	android:name
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-permission#com.example.montesorrilearning.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-	android:name
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-	android:name
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-uses-permission#com.example.montesorrilearning.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-	android:name
-		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/9d863eeb16f1d6d7ea38777fbce6a7f0/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-meta-data#androidx.lifecycle.ProcessLifecycleInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
-	android:value
-		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
-	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/fish/.gradle/caches/8.13/transforms/c7e5bb6ea1d23dd83cdfad3737aee186/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-meta-data#androidx.profileinstaller.ProfileInstallerInitializer
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-	android:value
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-receiver#androidx.profileinstaller.ProfileInstallReceiver
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:24:9-33:19
 	android:enabled
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+		ADDED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:31:13-36
 	android:exported
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-	android:permission
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+		ADDED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:32:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:33:13-75
+	android:name
+		ADDED from [androidx.camera:camera-core:1.3.1] /home/fish/.gradle/caches/8.13/transforms/8dff50e9bdb96b5d07f41909556b6a64/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:30:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.3.1] /home/fish/.gradle/caches/8.13/transforms/5663d57cd04f19ae314c728de31a2d00/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:31:17-103
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/fish/.gradle/caches/8.13/transforms/08d28a0c3d1afb13aeb43bbb0d24eff2/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/fish/.gradle/caches/8.13/transforms/edce6efb03f5fdccdab8c7bb9e96a574/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:23:5-68
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:23:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:22-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:26:5-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:26:22-74
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:29:9-37:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/fish/.gradle/caches/8.13/transforms/b2f70a8606a0d4763e4231070527c04b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:33:13-31
+	android:authorities
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:31:13-68
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:30:13-67
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:34:13-36:52
+	android:value
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:36:17-49
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:35:17-68
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:39:9-45:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:42:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:43:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:44:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:45:13-32
 	android:directBootAware
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:41:13-44
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:40:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:46:9-52:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:49:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:50:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:51:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:52:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:48:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:47:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:53:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:56:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:57:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:58:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:55:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:54:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:116:13-120:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:25-76
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] /home/fish/.gradle/caches/8.13/transforms/f888661b0ef020c62cf4336f3789bd23/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:25-85
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/fish/.gradle/caches/8.13/transforms/5f124a0b5936973c54566d9e66efd251/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.example.montesorrilearning.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.montesorrilearning.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/fish/.gradle/caches/8.13/transforms/1e747f24581a73201518cd6210c9cd81/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/fish/.gradle/caches/8.13/transforms/cfe2f9ac343e3527a5d31e26dc9b7a38/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/fish/.gradle/caches/8.13/transforms/becfe7b3235b35d2e8790302520525f0/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
 intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
 action#androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
 intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
 action#androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
 intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
 action#androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
 intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
 action#androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/fish/.gradle/caches/8.13/transforms/82065c056ebd4cec67c7d217b8b6578c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/fish/.gradle/caches/8.13/transforms/d78c9efe7416acaf0a37f9a2a46385cd/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92

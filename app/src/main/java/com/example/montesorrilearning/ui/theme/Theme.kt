@@ -1,55 +1,58 @@
 package com.example.montesorrilearning.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 
-private val MontessoriColorScheme = lightColorScheme(
-    primary = WarmBrown,
-    onPrimary = WarmCream,
-    primaryContainer = SoftGreen,
-    onPrimaryContainer = WarmBrownDark,
-    secondary = SoftOrange,
-    onSecondary = WarmBrownDark,
-    secondaryContainer = SoftOrange.copy(alpha = 0.2f),
-    onSecondaryContainer = WarmBrownDark,
-    tertiary = SoftTeal,
-    onTertiary = WarmBrownDark,
-    background = SurfaceLight,
-    onBackground = OnSurfaceLight,
-    surface = CardBackground,
-    onSurface = OnSurfaceLight,
-    surfaceVariant = SurfaceVariantLight,
-    onSurfaceVariant = WarmBrownDark,
-    outline = DividerColor
+private val DarkColorScheme = darkColorScheme(
+    primary = PrimaryCyan,
+    onPrimary = OnPrimary,
+    primaryContainer = PrimaryGlow,
+    onPrimaryContainer = PrimaryCyan,
+    secondary = SecondaryAmber,
+    onSecondary = OnPrimary,
+    secondaryContainer = SecondaryGlow,
+    onSecondaryContainer = SecondaryAmber,
+    tertiary = TertiaryLavender,
+    onTertiary = OnPrimary,
+    error = ErrorRed,
+    onError = OnPrimary,
+    errorContainer = ErrorRed.copy(alpha = 0.15f),
+    onErrorContainer = ErrorRed,
+    background = BackgroundDark,
+    onBackground = OnBackground,
+    surface = SurfaceDark,
+    onSurface = OnSurface,
+    surfaceVariant = SurfaceVariantDark,
+    onSurfaceVariant = OnSurfaceVariant,
+    outline = OutlineDark,
+    outlineVariant = OutlineVariantDark,
+    surfaceTint = PrimaryCyan,
+    inverseSurface = SurfaceLight,
+    inverseOnSurface = OnSurfaceLight,
 )
 
-private val MontessoriShapes = Shapes(
-    small = RoundedCornerShape(8.dp),
-    medium = RoundedCornerShape(16.dp),
-    large = RoundedCornerShape(24.dp)
+val AppShapes = Shapes(
+    extraSmall = RoundedCornerShape(6.dp),
+    small = RoundedCornerShape(10.dp),
+    medium = RoundedCornerShape(14.dp),
+    large = RoundedCornerShape(20.dp),
+    extraLarge = RoundedCornerShape(28.dp),
 )
-
-val MontessoriCardShape = CardDefaults.shape.copy(
-    topStart = RoundedCornerShape(16.dp),
-    topEnd = RoundedCornerShape(16.dp),
-    bottomStart = RoundedCornerShape(16.dp),
-    bottomEnd = RoundedCornerShape(16.dp)
-)
-
-val LargeRoundedShape = RoundedCornerShape(16.dp)
-val SmallRoundedShape = RoundedCornerShape(8.dp)
 
 @Composable
-fun MontessoriTheme(content: @Composable () -> Unit) {
+fun MontessoriTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     MaterialTheme(
-        colorScheme = MontessoriColorScheme,
+        colorScheme = DarkColorScheme,
         typography = AppTypography,
-        shapes = MontessoriShapes,
+        shapes = AppShapes,
         content = content
     )
 }

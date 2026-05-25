@@ -11,6 +11,8 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -20,14 +22,17 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -35,7 +40,6 @@ import androidx.core.content.ContextCompat
 import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.Child
 import com.example.montesorrilearning.domain.model.MontessoriArea
-import com.example.montesorrilearning.ui.theme.*
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -59,8 +63,9 @@ fun CaptureScreen(
     onBack: () -> Unit,
     onDismissLimitWarning: () -> Unit
 ) {
+    val context = LocalContext.current
     var hasCameraPermission by remember {
-        mutableStateOf(ContextCompat.checkSelfPermission(LocalContext.current, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
+        mutableStateOf(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
     }
 
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -110,22 +115,25 @@ fun CaptureScreen(
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(child.name, style = MaterialTheme.typography.titleMedium)
-                            Text("$dailyCount/50 today", style = MaterialTheme.typography.labelSmall, color = if (dailyLimitReached) SoftRed else SoftGreen)
+                            Text("$dailyCount/50 today", style = MaterialTheme.typography.labelSmall, color = if (dailyLimitReached) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary)
                         }
                     }
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                )
             )
         },
         bottomBar = {
             Surface(
                 modifier = Modifier.fillMaxWidth(),
-                color = CardBackground
+                color = MaterialTheme.colorScheme.surface
             ) {
                 Button(
                     onClick = {
@@ -159,18 +167,18 @@ fun CaptureScreen(
                 .fillMaxSize()
                 .padding(padding)
                 .verticalScroll(rememberScrollState())
-                .background(SurfaceLight)
+                .background(MaterialTheme.colorScheme.background)
         ) {
             if (!hasCameraPermission) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(300.dp)
-                        .background(WarmCream),
+                        .background(MaterialTheme.colorScheme.surfaceVariant),
                     contentAlignment = Alignment.Center
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text("Camera permission required", color = WarmBrown)
+                        Text("Camera permission required", color = MaterialTheme.colorScheme.onSurfaceVariant)
                         Spacer(modifier = Modifier.height(8.dp))
                         Button(onClick = { permissionLauncher.launch(Manifest.permission.CAMERA) }) {
                             Text("Grant Permission")
@@ -188,42 +196,51 @@ fun CaptureScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            if (capturedPhotos.isNotEmpty()) {
-                Text(
-                    "Photos (${capturedPhotos.size})",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = WarmBrownDark,
-                    modifier = Modifier.padding(horizontal = 16.dp)
-                )
-                Spacer(modifier = Modifier.height(4.dp))
+            AnimatedVisibility(
+                visible = capturedPhotos.isNotEmpty(),
+                enter = fadeIn(animationSpec = tween(400)) + slideInVertically(
+                    animationSpec = tween(400),
+                    initialOffsetY = { it / 2 }
+                ),
+                exit = fadeOut(animationSpec = tween(300))
+            ) {
+                Column {
+                    Text(
+                        "Photos (${capturedPhotos.size})",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.onSurface,
+                        modifier = Modifier.padding(horizontal = 16.dp)
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
 
-                LazyRow(
-                    contentPadding = PaddingValues(horizontal = 16.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    itemsIndexed(capturedPhotos) { index, uri ->
-                        Box {
-                            AsyncImage(
-                                model = uri,
-                                contentDescription = "Photo ${index + 1}",
-                                modifier = Modifier
-                                    .size(80.dp)
-                                    .clip(RoundedCornerShape(8.dp)),
-                                contentScale = ContentScale.Crop
-                            )
-                            IconButton(
-                                onClick = { onPhotoRemoved(index) },
-                                modifier = Modifier
-                                    .align(Alignment.TopEnd)
-                                    .size(24.dp)
-                                    .background(SoftRed.copy(alpha = 0.8f), RoundedCornerShape(12.dp))
-                            ) {
-                                Icon(Icons.Default.Close, contentDescription = "Remove", modifier = Modifier.size(16.dp), tint = White)
+                    LazyRow(
+                        contentPadding = PaddingValues(horizontal = 16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        itemsIndexed(capturedPhotos) { index, uri ->
+                            Box {
+                                AsyncImage(
+                                    model = uri,
+                                    contentDescription = "Photo ${index + 1}",
+                                    modifier = Modifier
+                                        .size(80.dp)
+                                        .clip(RoundedCornerShape(8.dp)),
+                                    contentScale = ContentScale.Crop
+                                )
+                                IconButton(
+                                    onClick = { onPhotoRemoved(index) },
+                                    modifier = Modifier
+                                        .align(Alignment.TopEnd)
+                                        .size(24.dp)
+                                        .background(MaterialTheme.colorScheme.error.copy(alpha = 0.8f), RoundedCornerShape(12.dp))
+                                ) {
+                                    Icon(Icons.Default.Close, contentDescription = "Remove", modifier = Modifier.size(16.dp), tint = Color.White)
+                                }
                             }
                         }
                     }
+                    Spacer(modifier = Modifier.height(12.dp))
                 }
-                Spacer(modifier = Modifier.height(12.dp))
             }
 
             OutlinedTextField(
@@ -269,7 +286,7 @@ fun CameraPreview(
     onPhotoTaken: (Uri) -> Unit
 ) {
     val context = LocalContext.current
-    val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     val cameraProviderFuture = remember { ProcessCameraProvider.getInstance(context) }
     val imageCapture = remember { ImageCapture.Builder().build() }
     val cameraExecutor = remember { Executors.newSingleThreadExecutor() }
@@ -334,13 +351,13 @@ fun CameraPreview(
                 .align(Alignment.BottomCenter)
                 .padding(16.dp)
                 .size(64.dp)
-                .background(White, RoundedCornerShape(32.dp))
+                .background(MaterialTheme.colorScheme.surface, RoundedCornerShape(32.dp))
         ) {
             Icon(
                 Icons.Default.CameraAlt,
                 contentDescription = "Take Photo",
                 modifier = Modifier.size(32.dp),
-                tint = WarmBrownDark
+                tint = MaterialTheme.colorScheme.onSurface
             )
         }
     }
@@ -387,5 +404,3 @@ fun MontessoriAreaDropdown(
         }
     }
 }
-
-private val White = androidx.compose.ui.graphics.Color.White

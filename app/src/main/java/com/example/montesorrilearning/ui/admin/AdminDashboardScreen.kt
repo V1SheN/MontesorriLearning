@@ -30,13 +30,13 @@ fun AdminDashboardScreen(
             modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Button(onClick = onNavigateToUsers, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(onClick = onNavigateToUsers, modifier = Modifier.fillMaxWidth().height(56.dp)) {
                 Text("User Management")
             }
-            Button(onClick = onNavigateToClassrooms, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(onClick = onNavigateToClassrooms, modifier = Modifier.fillMaxWidth().height(56.dp)) {
                 Text("Classroom Management")
             }
-            Button(onClick = onNavigateToAnalytics, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(onClick = onNavigateToAnalytics, modifier = Modifier.fillMaxWidth().height(56.dp)) {
                 Text("Analytics")
             }
         }

@@ -1,5 +1,7 @@
 package com.example.montesorrilearning.ui.parent
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,7 +20,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.WorkEntry
-import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,8 +44,8 @@ fun FeedScreen(
                     TextButton(onClick = onLogout) { Text("Logout") }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = WarmCream,
-                    titleContentColor = WarmBrownDark
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface,
                 )
             )
         }
@@ -53,7 +54,7 @@ fun FeedScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(SurfaceLight),
+                .background(MaterialTheme.colorScheme.background),
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
@@ -71,7 +72,7 @@ fun FeedScreen(
                 Text(
                     text = "Recent Activity",
                     style = MaterialTheme.typography.titleLarge,
-                    color = WarmBrownDark,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontWeight = FontWeight.SemiBold
                 )
             }
@@ -84,15 +85,22 @@ fun FeedScreen(
                             .height(200.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("No entries yet today", color = WarmBrown, style = MaterialTheme.typography.bodyLarge)
+                        Text("No entries yet today", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodyLarge)
                     }
                 }
             } else {
                 items(feedEntries, key = { it.id }) { entry ->
-                    EntryCard(
-                        entry = entry,
-                        onClick = { onEntryClick(entry) }
-                    )
+                    AnimatedVisibility(
+                        visible = true,
+                        enter = fadeIn(animationSpec = tween(400)) + slideInVertically(
+                            animationSpec = tween(400), initialOffsetY = { it / 4 }
+                        )
+                    ) {
+                        EntryCard(
+                            entry = entry,
+                            onClick = { onEntryClick(entry) }
+                        )
+                    }
                 }
             }
         }
@@ -108,7 +116,7 @@ private fun DailySummaryCard(
 ) {
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = WarmCream)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
     ) {
         Row(
             modifier = Modifier
@@ -121,12 +129,12 @@ private fun DailySummaryCard(
                     text = "$totalEntries entries today",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
-                    color = WarmBrownDark
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     text = "$totalPhotos photos",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = WarmBrown
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
             FilledTonalButton(onClick = onArchive) {
@@ -152,7 +160,7 @@ private fun EntryCard(
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = CardBackground),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(
@@ -168,20 +176,20 @@ private fun EntryCard(
                     Icons.Default.Person,
                     contentDescription = null,
                     modifier = Modifier.size(20.dp),
-                    tint = WarmBrown
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
                     text = entry.childName ?: "Child",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
-                    color = WarmBrownDark,
+                    color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f)
                 )
                 Text(
                     text = DateUtils.formatTime(entry.createdAt),
                     style = MaterialTheme.typography.labelSmall,
-                    color = WarmBrown.copy(alpha = 0.6f)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
                 )
             }
 
@@ -205,18 +213,18 @@ private fun EntryCard(
                 text = entry.title,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold,
-                color = WarmBrownDark
+                color = MaterialTheme.colorScheme.onSurface
             )
 
             Surface(
                 shape = RoundedCornerShape(4.dp),
-                color = SoftGreen.copy(alpha = 0.2f)
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
             ) {
                 Text(
                     text = entry.montessoriArea,
                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
                     style = MaterialTheme.typography.labelSmall,
-                    color = SoftGreenDark
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
 
@@ -225,7 +233,7 @@ private fun EntryCard(
                 Text(
                     text = entry.teacherComment,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = OnSurfaceLight,
+                    color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )

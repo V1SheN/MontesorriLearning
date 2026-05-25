@@ -1,5 +1,6 @@
 package com.example.montesorrilearning.ui.auth
 
+import androidx.compose.animation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
@@ -12,8 +13,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.montesorrilearning.ui.theme.WarmBeige
-import com.example.montesorrilearning.ui.theme.WarmBrownDark
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -31,7 +30,7 @@ fun LoginScreen(
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = WarmBeige
+        color = MaterialTheme.colorScheme.background
     ) {
         Column(
             modifier = Modifier
@@ -44,7 +43,7 @@ fun LoginScreen(
             Text(
                 text = "Montessori\nLearning",
                 style = MaterialTheme.typography.displayLarge,
-                color = WarmBrownDark,
+                color = MaterialTheme.colorScheme.onBackground,
                 fontWeight = FontWeight.Bold
             )
 
@@ -71,7 +70,7 @@ fun LoginScreen(
                 modifier = Modifier.fillMaxWidth()
             )
 
-            if (!isLoginMode) {
+            AnimatedVisibility(visible = !isLoginMode) {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 OutlinedTextField(

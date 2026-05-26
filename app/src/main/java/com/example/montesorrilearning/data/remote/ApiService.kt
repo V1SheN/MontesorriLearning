@@ -39,6 +39,44 @@ data class DailySummary(val date: String, val classroomId: String?, val entries:
 
 data class MessageRequest(val subject: String?, val body: String, val classroomId: String?)
 
+data class SyllabusDto(
+    val id: String = "",
+    val classroom_id: String = "",
+    val montessori_area: String = "",
+    val title: String = "",
+    val description: String = "",
+    val week_number: Int? = null,
+    val year: Int = 2026,
+    val sort_order: Int = 0,
+    val created_at: String = "",
+    val updated_at: String = "",
+    val classroom_name: String? = null
+) {
+    fun toDomain() = com.example.montesorrilearning.domain.model.Syllabus(
+        id = id,
+        classroomId = classroom_id,
+        montessoriArea = montessori_area,
+        title = title,
+        description = description,
+        weekNumber = week_number,
+        year = year,
+        sortOrder = sort_order,
+        createdAt = created_at,
+        updatedAt = updated_at,
+        classroomName = classroom_name
+    )
+}
+
+data class SyllabusRequest(
+    val classroomId: String,
+    val montessoriArea: String,
+    val title: String,
+    val description: String = "",
+    val weekNumber: Int? = null,
+    val year: Int = 2026,
+    val sortOrder: Int = 0
+)
+
 interface ApiService {
 
     @POST("api/auth/login")
@@ -105,4 +143,23 @@ interface ApiService {
 
     @GET("api/upload/{key}")
     suspend fun getUpload(@Path("key") key: String): ResponseBody
+
+    @GET("api/admin/syllabus")
+    suspend fun getSyllabus(
+        @Query("classroomId") classroomId: String? = null,
+        @Query("montessoriArea") montessoriArea: String? = null,
+        @Query("year") year: Int? = null
+    ): List<SyllabusDto>
+
+    @GET("api/admin/syllabus/{id}")
+    suspend fun getSyllabusItem(@Path("id") id: String): SyllabusDto
+
+    @POST("api/admin/syllabus")
+    suspend fun createSyllabus(@Body body: SyllabusRequest): SyllabusDto
+
+    @PUT("api/admin/syllabus/{id}")
+    suspend fun updateSyllabus(@Path("id") id: String, @Body body: SyllabusRequest): SyllabusDto
+
+    @DELETE("api/admin/syllabus/{id}")
+    suspend fun deleteSyllabus(@Path("id") id: String): Response<Void>
 }

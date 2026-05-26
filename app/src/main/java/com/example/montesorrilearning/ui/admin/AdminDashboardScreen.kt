@@ -14,6 +14,7 @@ fun AdminDashboardScreen(
     onNavigateToUsers: () -> Unit = {},
     onNavigateToClassrooms: () -> Unit = {},
     onNavigateToAnalytics: () -> Unit = {},
+    onNavigateToSyllabus: () -> Unit = {},
     onLogout: () -> Unit
 ) {
     Scaffold(
@@ -22,21 +23,43 @@ fun AdminDashboardScreen(
                 title = { Text("Admin Panel") },
                 actions = {
                     TextButton(onClick = onLogout) { Text("Logout") }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                )
             )
         }
     ) { padding ->
         Column(
-            modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            FilledTonalButton(onClick = onNavigateToUsers, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(
+                onClick = onNavigateToSyllabus,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
+                Text("Syllabus Management")
+            }
+            FilledTonalButton(
+                onClick = onNavigateToUsers,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
                 Text("User Management")
             }
-            FilledTonalButton(onClick = onNavigateToClassrooms, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(
+                onClick = onNavigateToClassrooms,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
                 Text("Classroom Management")
             }
-            FilledTonalButton(onClick = onNavigateToAnalytics, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            FilledTonalButton(
+                onClick = onNavigateToAnalytics,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
                 Text("Analytics")
             }
         }

@@ -118,6 +118,24 @@ CREATE TABLE message_recipients (
 );
 
 -- ============================================================
+-- Syllabus (admin-managed curriculum)
+-- ============================================================
+CREATE TABLE syllabus (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    classroom_id    UUID NOT NULL REFERENCES classrooms(id) ON DELETE CASCADE,
+    montessori_area TEXT NOT NULL CHECK (montessori_area IN (
+        'practical_life', 'sensorial', 'language', 'math', 'cultural'
+    )),
+    title           TEXT NOT NULL,
+    description     TEXT NOT NULL DEFAULT '',
+    week_number     INT,
+    year            INT NOT NULL DEFAULT EXTRACT(YEAR FROM CURRENT_DATE),
+    sort_order      INT NOT NULL DEFAULT 0,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================
 -- Indexes
 -- ============================================================
 CREATE INDEX idx_media_created ON media (created_at);
@@ -126,3 +144,5 @@ CREATE INDEX idx_entries_classroom_date ON work_entries (classroom_id, created_a
 CREATE INDEX idx_media_entry ON media (entry_id);
 CREATE INDEX idx_messages_recipient ON message_recipients (user_id, message_id);
 CREATE INDEX idx_entries_created ON work_entries (created_at);
+CREATE INDEX idx_syllabus_classroom ON syllabus (classroom_id, sort_order);
+CREATE INDEX idx_syllabus_area ON syllabus (classroom_id, montessori_area, week_number);

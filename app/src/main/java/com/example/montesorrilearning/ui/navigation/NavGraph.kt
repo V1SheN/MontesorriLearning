@@ -13,6 +13,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.montesorrilearning.ui.admin.*
 import com.example.montesorrilearning.ui.auth.AuthViewModel
 import com.example.montesorrilearning.ui.auth.LoginScreen
@@ -42,7 +43,12 @@ object Routes {
     const val ADMIN_USERS = "admin_users"
     const val ADMIN_CLASSROOMS = "admin_classrooms"
     const val ADMIN_ANALYTICS = "admin_analytics"
+    const val ADMIN_SYLLABUS = "admin_syllabus"
+    const val ADMIN_SYLLABUS_EDIT = "admin_syllabus_edit/{itemId}"
+    const val ADMIN_SYLLABUS_CREATE = "admin_syllabus_create"
     const val CALENDAR_HEATMAP = "calendar_heatmap"
+
+    fun syllabusEditRoute(itemId: String) = "admin_syllabus_edit/$itemId"
     const val NOTIFICATION_SETTINGS = "notification_settings"
 
     fun captureRoute(childId: String, childName: String) = "capture/$childId/$childName"
@@ -296,6 +302,7 @@ fun NavGraph(
                 onNavigateToUsers = { navController.navigate(Routes.ADMIN_USERS) },
                 onNavigateToClassrooms = { navController.navigate(Routes.ADMIN_CLASSROOMS) },
                 onNavigateToAnalytics = { navController.navigate(Routes.ADMIN_ANALYTICS) },
+                onNavigateToSyllabus = { navController.navigate(Routes.ADMIN_SYLLABUS) },
                 onLogout = {
                     authViewModel.logout()
                     navController.navigate(Routes.LOGIN) {
@@ -315,6 +322,70 @@ fun NavGraph(
 
         composable(Routes.ADMIN_ANALYTICS) {
             AnalyticsScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Routes.ADMIN_SYLLABUS) {
+            val adminViewModel: AdminViewModel = viewModel()
+            val uiState by adminViewModel.uiState.collectAsState()
+
+            SyllabusListScreen(
+                syllabus = uiState.syllabus,
+                isLoading = uiState.isLoading,
+                error = uiState.error,
+                selectedArea = null,
+                onAreaFilter = { area -> adminViewModel.loadSyllabus(area = area) },
+                onItemClick = { item ->
+                    navController.navigate(Routes.syllabusEditRoute(item.id))
+                },
+                onAdd = { navController.navigate(Routes.ADMIN_SYLLABUS_CREATE) },
+                onRefresh = { adminViewModel.loadSyllabus() },
+                onBack = { navController.popBackStack() }
+            )
+            LaunchedEffect(Unit) { adminViewModel.loadSyllabus() }
+        }
+
+        composable(Routes.ADMIN_SYLLABUS_EDIT, arguments = listOf(navArgument("itemId") { type = NavType.StringType })) { backStackEntry ->
+            val itemId = backStackEntry.arguments?.getString("itemId") ?: ""
+            val adminViewModel: AdminViewModel = viewModel()
+            val uiState by adminViewModel.uiState.collectAsState()
+
+            SyllabusEditScreen(
+                existing = uiState.selectedSyllabus,
+                isLoading = uiState.isLoading,
+                error = uiState.error,
+                successMessage = uiState.successMessage,
+                onSave = { _, area, title, desc, week, order ->
+                    val request = com.example.montesorrilearning.data.remote.SyllabusRequest(
+                        classroomId = "",
+                        montessoriArea = area,
+                        title = title,
+                        description = desc,
+                        weekNumber = week,
+                        sortOrder = order
+                    )
+                    adminViewModel.updateSyllabus(itemId, request)
+                },
+                onBack = { adminViewModel.clearSelection(); navController.popBackStack() },
+                onClearMessages = { adminViewModel.clearMessages() }
+            )
+            LaunchedEffect(itemId) { adminViewModel.loadSyllabusItem(itemId) }
+        }
+
+        composable(Routes.ADMIN_SYLLABUS_CREATE) {
+            val adminViewModel: AdminViewModel = viewModel()
+            val uiState by adminViewModel.uiState.collectAsState()
+
+            SyllabusEditScreen(
+                existing = null,
+                isLoading = uiState.isLoading,
+                error = uiState.error,
+                successMessage = uiState.successMessage,
+                onSave = { _, area, title, desc, week, order ->
+                    adminViewModel.createSyllabus("", area, title, desc, week, order)
+                },
+                onBack = { navController.popBackStack() },
+                onClearMessages = { adminViewModel.clearMessages() }
+            )
         }
 
         composable(Routes.CALENDAR_HEATMAP) {

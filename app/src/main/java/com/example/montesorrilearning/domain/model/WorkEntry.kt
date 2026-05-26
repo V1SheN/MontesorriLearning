@@ -1,14 +1,16 @@
 package com.example.montesorrilearning.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 data class WorkEntry(
     val id: String = "",
-    val childId: String = "",
-    val teacherId: String = "",
-    val classroomId: String = "",
-    val montessoriArea: String = "",
+    @SerializedName("child_id") val childId: String = "",
+    @SerializedName("teacher_id") val teacherId: String = "",
+    @SerializedName("classroom_id") val classroomId: String = "",
+    @SerializedName("montessori_area") val montessoriArea: String = "",
     val title: String = "",
-    val teacherComment: String = "",
-    val createdAt: String = "",
+    @SerializedName("teacher_comment") val teacherComment: String = "",
+    @SerializedName("created_at") val createdAt: String = "",
     val media: List<Media> = emptyList(),
-    val childName: String? = null
+    @SerializedName("child_name") val childName: String? = null
 )

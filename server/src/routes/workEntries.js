@@ -104,7 +104,7 @@ router.post('/', authenticate, requireRole('teacher', 'admin'), async (req, res,
           media_type: 'image',
           storage_key: m.storageKey,
           thumbnail_key: m.thumbnailKey || null,
-          is_cover: m.isCover || i === 0,
+          is_cover: m.isCover === undefined ? (i === 0) : m.isCover,
           caption: m.caption || null,
           sort_order: m.sortOrder || i,
         }));

@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.montesorrilearning.data.remote.SyllabusRequest
 import com.example.montesorrilearning.data.remote.TermRequest
+import com.example.montesorrilearning.data.repository.ClassRepository
 import com.example.montesorrilearning.data.repository.SyllabusRepository
 import com.example.montesorrilearning.data.repository.TermRepository
 import com.example.montesorrilearning.domain.model.Syllabus
@@ -27,7 +28,8 @@ data class AdminUiState(
 @HiltViewModel
 class AdminViewModel @Inject constructor(
     private val syllabusRepository: SyllabusRepository,
-    private val termRepository: TermRepository
+    private val termRepository: TermRepository,
+    private val classRepository: ClassRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AdminUiState())
@@ -140,6 +142,15 @@ class AdminViewModel @Inject constructor(
             termRepository.deleteTerm(id).fold(
                 onSuccess = { _uiState.value = _uiState.value.copy(isLoading = false, successMessage = "Deleted"); loadTerms() },
                 onFailure = { _uiState.value = _uiState.value.copy(error = it.message, isLoading = false) }
+            )
+        }
+    }
+
+    fun loadClassrooms() {
+        viewModelScope.launch {
+            classRepository.getClassrooms().fold(
+                onSuccess = { _uiState.value = _uiState.value.copy(classrooms = it) },
+                onFailure = { _uiState.value = _uiState.value.copy(error = it.message) }
             )
         }
     }

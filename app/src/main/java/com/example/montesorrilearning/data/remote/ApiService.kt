@@ -4,6 +4,7 @@ import com.example.montesorrilearning.domain.model.Child
 import com.example.montesorrilearning.domain.model.Classroom
 import com.example.montesorrilearning.domain.model.Message
 import com.example.montesorrilearning.domain.model.WorkEntry
+import com.google.gson.annotations.SerializedName
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
@@ -20,7 +21,15 @@ data class WorkEntryRequest(
     val childId: String,
     val montessoriArea: String,
     val title: String,
-    val teacherComment: String
+    val teacherComment: String,
+    val media: List<MediaKey>? = null
+)
+
+data class MediaKey(
+    val storageKey: String,
+    val thumbnailKey: String? = null,
+    val isCover: Boolean = false,
+    val sortOrder: Int = 0
 )
 
 data class UploadResponse(
@@ -33,8 +42,18 @@ data class UploadResponse(
 
 data class DailyCount(val childId: String, val date: String, val count: Int, val max: Int)
 data class ChildDailyCount(val childId: String, val childName: String, val date: String, val count: Int, val max: Int)
+data class DailyRangeCount(val date: String, val count: Int)
 data class DailySummary(val date: String, val classroomId: String?, val entries: List<WorkEntry>, val totalEntries: Int, val totalPhotos: Int)
 data class MessageRequest(val subject: String?, val body: String, val classroomId: String?)
+
+// ─── Admin User DTO ────────────────────────────────────────────
+data class AdminUserDto(
+    val id: String = "",
+    val email: String = "",
+    @SerializedName("display_name") val displayName: String = "",
+    val role: String = "",
+    val phone: String? = null
+)
 
 // ─── Syllabus DTOs ─────────────────────────────────────────────
 data class SyllabusDto(
@@ -199,6 +218,13 @@ interface ApiService {
     @GET("api/daily-count/{childId}")
     suspend fun getDailyCount(@Path("childId") childId: String): DailyCount
 
+    @GET("api/daily-counts/range")
+    suspend fun getDailyCountRange(
+        @Query("childId") childId: String,
+        @Query("from") from: String,
+        @Query("to") to: String
+    ): List<DailyRangeCount>
+
     @GET("api/daily-summary")
     suspend fun getDailySummary(@Query("date") date: String, @Query("classroomId") classroomId: String?): DailySummary
 
@@ -229,6 +255,10 @@ interface ApiService {
 
     @DELETE("api/admin/terms/{id}")
     suspend fun deleteTerm(@Path("id") id: String): Response<Void>
+
+    // ─── Admin Users ────────────────────────────────────────
+    @GET("api/admin/users")
+    suspend fun getAdminUsers(): List<AdminUserDto>
 
     // ─── Syllabus ───────────────────────────────────────────
     @GET("api/admin/syllabus")

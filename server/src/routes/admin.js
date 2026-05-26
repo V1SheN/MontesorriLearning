@@ -5,6 +5,16 @@ const { authenticate, requireRole } = require('../middleware/auth');
 
 const router = express.Router();
 
+// ─── Users list ──────────────────────────────────────────────
+router.get('/users', authenticate, requireRole('admin'), async (req, res, next) => {
+  try {
+    const users = await knex('users')
+      .select('id', 'email', 'display_name', 'role', 'phone', 'created_at')
+      .orderBy('display_name');
+    res.json(users);
+  } catch (err) { next(err); }
+});
+
 // ─── Analytics stub ──────────────────────────────────────────
 router.get('/analytics', authenticate, requireRole('admin'), (req, res) => {
   res.status(501).json({ message: 'Not implemented', status: 'stub' });

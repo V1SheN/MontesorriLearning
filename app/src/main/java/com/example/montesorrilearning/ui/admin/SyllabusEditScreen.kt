@@ -23,6 +23,8 @@ fun SyllabusEditScreen(
     isLoading: Boolean,
     error: String?,
     successMessage: String?,
+    terms: List<com.example.montesorrilearning.domain.model.Term>,
+    classrooms: List<com.example.montesorrilearning.domain.model.Classroom>,
     onSave: (termId: String, classroomId: String, montessoriArea: String, title: String, description: String, dayOfWeek: Int, weekNumber: Int?, sortOrder: Int, isExtracurricular: Boolean, activityType: String?) -> Unit,
     onBack: () -> Unit,
     onClearMessages: () -> Unit
@@ -30,6 +32,8 @@ fun SyllabusEditScreen(
     val isEditing = existing != null
     var title by remember { mutableStateOf(existing?.title ?: "") }
     var description by remember { mutableStateOf(existing?.description ?: "") }
+    var selectedTermId by remember { mutableStateOf(existing?.termId ?: "") }
+    var selectedClassroomId by remember { mutableStateOf(existing?.classroomId ?: "") }
     var selectedArea by remember { mutableStateOf(existing?.montessoriArea ?: "practical_life") }
     var dayOfWeek by remember { mutableStateOf(existing?.dayOfWeek?.toString() ?: "1") }
     var weekNumber by remember { mutableStateOf(existing?.weekNumber?.toString() ?: "") }
@@ -37,6 +41,9 @@ fun SyllabusEditScreen(
     var isExtracurricular by remember { mutableStateOf(existing?.isExtracurricular ?: false) }
     var activityType by remember { mutableStateOf(existing?.activityType ?: "") }
     var areaExpanded by remember { mutableStateOf(false) }
+    var dayExpanded by remember { mutableStateOf(false) }
+    var termExpanded by remember { mutableStateOf(false) }
+    var classroomExpanded by remember { mutableStateOf(false) }
 
     val areaOptions = listOf(
         "practical_life" to "Practical Life", "sensorial" to "Sensorial",
@@ -80,9 +87,28 @@ fun SyllabusEditScreen(
                 }
             }
 
+            // Term picker
+            ExposedDropdownMenuBox(expanded = termExpanded, onExpandedChange = { termExpanded = !termExpanded }) {
+                OutlinedTextField(value = terms.find { it.id == selectedTermId }?.name ?: "Select Term", onValueChange = {}, readOnly = true, label = { Text("Term") }, leadingIcon = { Icon(Icons.Default.CalendarMonth, contentDescription = null) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = termExpanded) }, modifier = Modifier.fillMaxWidth().menuAnchor(), shape = RoundedCornerShape(12.dp))
+                ExposedDropdownMenu(expanded = termExpanded, onDismissRequest = { termExpanded = false }) {
+                    terms.forEach { term -> DropdownMenuItem(text = { Text("${term.name} (${term.year})") }, onClick = { selectedTermId = term.id; termExpanded = false }) }
+                }
+            }
+
+            // Classroom picker
+            ExposedDropdownMenuBox(expanded = classroomExpanded, onExpandedChange = { classroomExpanded = !classroomExpanded }) {
+                OutlinedTextField(value = classrooms.find { it.id == selectedClassroomId }?.name ?: "Select Classroom", onValueChange = {}, readOnly = true, label = { Text("Classroom") }, leadingIcon = { Icon(Icons.Default.School, contentDescription = null) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = classroomExpanded) }, modifier = Modifier.fillMaxWidth().menuAnchor(), shape = RoundedCornerShape(12.dp))
+                ExposedDropdownMenu(expanded = classroomExpanded, onDismissRequest = { classroomExpanded = false }) {
+                    classrooms.forEach { c -> DropdownMenuItem(text = { Text(c.name) }, onClick = { selectedClassroomId = c.id; classroomExpanded = false }) }
+                }
+            }
+
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                ExposedDropdownMenuBox(expanded = false, onExpandedChange = { }) {
-                    OutlinedTextField(value = dayOptions.find { it.first == dayOfWeek }?.second ?: "Monday", onValueChange = {}, readOnly = true, label = { Text("Day") }, modifier = Modifier.weight(1f).menuAnchor(), shape = RoundedCornerShape(12.dp), singleLine = true)
+                ExposedDropdownMenuBox(expanded = dayExpanded, onExpandedChange = { dayExpanded = !dayExpanded }) {
+                    OutlinedTextField(value = dayOptions.find { it.first == dayOfWeek }?.second ?: "Monday", onValueChange = {}, readOnly = true, label = { Text("Day") }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = dayExpanded) }, modifier = Modifier.weight(1f).menuAnchor(), shape = RoundedCornerShape(12.dp), singleLine = true)
+                    ExposedDropdownMenu(expanded = dayExpanded, onDismissRequest = { dayExpanded = false }) {
+                        dayOptions.forEach { (value, label) -> DropdownMenuItem(text = { Text(label) }, onClick = { dayOfWeek = value; dayExpanded = false }) }
+                    }
                 }
                 OutlinedTextField(value = weekNumber, onValueChange = { weekNumber = it.filter { c -> c.isDigit() } }, label = { Text("Week #") }, modifier = Modifier.weight(1f), shape = RoundedCornerShape(12.dp), singleLine = true, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
             }
@@ -113,7 +139,7 @@ fun SyllabusEditScreen(
 
             Button(
                 onClick = {
-                    onSave("", "", selectedArea, title.trim(), description.trim(),
+                    onSave(selectedTermId, selectedClassroomId, selectedArea, title.trim(), description.trim(),
                         dayOfWeek.toIntOrNull() ?: 1, weekNumber.toIntOrNull(),
                         sortOrder.toIntOrNull() ?: 0, isExtracurricular,
                         activityType.ifBlank { null })

@@ -17,5 +17,5 @@ class ChildProgressRepository @Inject constructor(private val api: ApiService) {
         runCatching { api.upsertChildProgress(request).toDomain() }
 
     suspend fun deleteProgress(id: String): Result<Unit> =
-        runCatching { api.deleteChildProgress(id); Unit }
+        runCatching { val r = api.deleteChildProgress(id); if (r.isSuccessful) Unit else throw Exception("Delete failed: ${r.code()}") }
 }

@@ -1,6 +1,6 @@
 # Montessori Learning — Session Continuity
 
-## Project State (as of May 25, 2026)
+## Project State (as of May 26, 2026)
 
 Full-stack Montessori preschool communication app: Express.js backend + Kotlin/Compose Android app. Self-hosted (PostgreSQL, MinIO, ntfy), zero monthly fees.
 
@@ -15,22 +15,37 @@ Full-stack Montessori preschool communication app: Express.js backend + Kotlin/C
 
 ### Verified Working
 ```
-GET  /api/health              → 200
-POST /api/auth/login          → accessToken + refreshToken + user
-POST /api/auth/register       → user + tokens
-POST /api/auth/refresh        → new accessToken
-GET  /api/classrooms          → [classroom]
-GET  /api/children            → [child with classroom_name]
-POST /api/work-entries        → work entry with media[]
-GET  /api/work-entries        → filtered entries
-POST /api/messages            → message (needs recipientType)
-GET  /api/messages            → messages with sender + is_read
-GET  /api/daily-summary       → children with entries[]
-GET  /api/daily-counts        → [{childId, childName, date, count, max:50}]
-POST /api/classrooms          → 501 stub (admin)
-PUT  /api/classrooms/:id      → 501 stub (admin)
-DELETE /api/classrooms/:id    → 501 stub (admin)
-GET  /api/admin/analytics     → 501 stub (admin)
+GET  /api/health                     → 200
+POST /api/auth/login                 → accessToken + refreshToken + user
+POST /api/auth/register              → user + tokens (role defaults to parent, never admin)
+POST /api/auth/refresh               → new accessToken
+GET  /api/classrooms                 → [classroom]
+GET  /api/children                   → [child with classroom_name]
+POST /api/work-entries               → work entry with media[]
+GET  /api/work-entries               → filtered entries
+POST /api/messages                   → message (needs recipientType)
+GET  /api/messages                   → messages with sender + is_read
+GET  /api/daily-summary              → children with entries[]
+GET  /api/daily-counts               → [{childId, childName, date, count, max:50}]
+GET  /api/daily-counts/range         → [{date, count}] (calendar heatmap)
+GET  /api/admin/terms                → [term]
+POST /api/admin/terms                → create term (admin)
+PUT  /api/admin/terms/:id            → update term (admin)
+DELETE /api/admin/terms/:id          → delete term (admin)
+GET  /api/admin/syllabus             → [syllabus with term/classroom names]
+POST /api/admin/syllabus             → create syllabus (admin)
+PUT  /api/admin/syllabus/:id         → update syllabus (admin)
+DELETE /api/admin/syllabus/:id       → delete syllabus (admin)
+GET  /api/admin/users                → [user] (admin only)
+GET  /api/teacher-plans              → [teacher plan]
+POST /api/teacher-plans              → create plan
+PUT  /api/teacher-plans/:id          → update plan
+DELETE /api/teacher-plans/:id        → delete plan
+GET  /api/child-progress             → [progress]
+POST /api/child-progress             → upsert progress (teacher/admin)
+GET  /api/child-progress/:id         → single progress (restricted to own child for parents)
+DELETE /api/child-progress/:id       → delete (admin)
+GET  /api/admin/analytics            → 501 stub (admin)
 ```
 
 ### Test Accounts
@@ -97,6 +112,18 @@ APK at: `app/build/outputs/apk/debug/app-debug.apk`
 ### Infrastructure
 - **Port 80 in use**: `miningcore-webui` occupies host port 80; Caddy uses 8081
 
+### Remaining Code Review Findings (not yet fixed)
+- **Photo swipe/reorder gesture**: CaptureScreen uses static list, not drag-reorderable
+- **Per-photo upload progress**: UploadWorker batches, no individual progress tracking
+- **Admin Users/Analytics screens**: Android screens are stubs (backend ready)
+- **WhatsApp sharing**: `Intent(Intent.ACTION_SEND).setPackage("com.whatsapp")` not implemented
+- **Google Sign-In**: No stub button in LoginScreen
+- **No tests**: Backend or Android test suite not started
+- **Docker secrets**: `.env` baked into Docker image; `docker-compose.yml` has passwords in env vars
+- **AuthInterceptor**: `runBlocking` on OkHttp dispatcher — works but not ideal (standard pattern)
+- **init.sql**: Not updated with curriculum tables (handled by knex migrations instead)
+- **ParentExpectationsScreen**: Loads syllabus without filtering by child's classroom
+
 ## Files Changed This Session
 
 | File | Change |
@@ -106,33 +133,36 @@ APK at: `app/build/outputs/apk/debug/app-debug.apk`
 | `server/package.json` | bcrypt→bcryptjs |
 | `server/src/index.js` | trust proxy, validate xForwardedForHeader, uncaughtException handlers |
 | `server/src/db/knex.js` | conditional DB_PASSWORD |
-| `server/src/routes/auth.js` | require bcrypt→bcryptjs |
-| `server/src/routes/workEntries.js` | removed array destructuring from .first() |
+| `server/src/routes/auth.js` | require bcrypt→bcryptjs, added role validation (never admin via register) |
+| `server/src/routes/workEntries.js` | removed array destructuring from .first(), fixed isCover boolean logic |
+| `server/src/routes/childProgress.js` | Added parent access check on single GET /:id |
+| `server/src/routes/dailyCounts.js` | Added GET /range endpoint for calendar heatmap |
+| `server/src/routes/admin.js` | Added GET /api/admin/users endpoint, terms+syllabus CRUD |
+| `server/src/db/migrations/20260527000001_curriculum.js` | Added day_of_week CHECK constraints, CASCADE deletes, down cleanup |
+| `server/src/db/migrations/20260526000002_fix_constraints.js` | NEW — adds missing CHECK constraints for existing DBs |
 | `gradle.properties` | org.gradle.jvmargs (2g heap) |
 | `README.md` | Updated with API endpoints, test accounts, current status |
-| `app/.../MessageThreadScreen.kt` | Added LazyColumn import |
-| `app/.../CaptureScreen.kt` | Moved LocalContext.current out of remember, fixed LocalLifecycleOwner import |
-| `app/.../Theme.kt` | Replaced CardDefaults.shape.copy with RoundedCornerShape |
-| `app/.../WorkRepository.kt` | Added @ApplicationContext qualifier |
-| `server/src/routes/dailyCounts.js` | NEW — GET /api/daily-counts endpoint |
-| `server/src/routes/admin.js` | NEW — GET /api/admin/analytics stub |
-| `server/src/routes/classrooms.js` | Added POST/PUT/DELETE admin stubs |
-| `server/src/index.js` | Registered dailyCounts + admin routes |
-| `app/.../ApiService.kt` | Added ChildDailyCount DTO + getDailyCounts() |
-| `app/.../WorkRepository.kt` | Added getDailyCounts() |
-| `app/.../TeacherViewModel.kt` | Added loadDailyCounts(), wired to dailyCounts |
-| `app/.../NavGraph.kt` | Real share intent, admin routes, FeedScreen onShareSummary |
-| `app/.../FeedScreen.kt` | Added onShareSummary param + share button on DailySummaryCard |
-| `app/.../TodayEntriesScreen.kt` | Grouped entries by childName |
-| `app/.../AdminDashboardScreen.kt` | NEW — admin panel stub |
-| `app/.../UsersScreen.kt` | NEW — admin users stub |
-| `app/.../ClassroomsScreen.kt` | NEW — admin classrooms stub |
-| `app/.../AnalyticsScreen.kt` | NEW — admin analytics stub |
-| `app/.../CalendarHeatmapScreen.kt` | NEW — calendar heatmap stub |
-| `app/.../NotificationSettingsScreen.kt` | NEW — notification prefs stub |
-| `app/.../UploadWorker.kt` | NEW — WorkManager worker stub |
-| `app/.../network_security_config.xml` | NEW — cleartext to 10.0.2.2 |
-| `AndroidManifest.xml` | Added networkSecurityConfig reference |
+| `app/.../domain/model/Child.kt` | Added @SerializedName for snake_case API fields |
+| `app/.../domain/model/WorkEntry.kt` | Added @SerializedName for snake_case API fields |
+| `app/.../domain/model/Message.kt` | Added @SerializedName for snake_case API fields |
+| `app/.../domain/model/Classroom.kt` | Added import for @SerializedName |
+| `app/.../data/remote/ApiService.kt` | Added AdminUserDto, MediaKey, DailyRangeCount, getDailyCountRange(), getAdminUsers(), SerializedName import |
+| `app/.../data/remote/AuthInterceptor.kt` | No functional change (runBlocking pattern standard for OkHttp interceptors) |
+| `app/.../data/repository/WorkRepository.kt` | Added getDailyCountRange() |
+| `app/.../data/repository/TermRepository.kt` | Fixed delete to check HTTP status |
+| `app/.../data/repository/TeacherPlanRepository.kt` | Fixed delete to check HTTP status |
+| `app/.../data/repository/ChildProgressRepository.kt` | Fixed delete to check HTTP status |
+| `app/.../data/local/UploadWorker.kt` | NEW — implements actual photo upload + work entry creation with media keys |
+| `app/.../ui/admin/AdminViewModel.kt` | Added ClassRepository inject, loadClassrooms() |
+| `app/.../ui/admin/TermManagementScreen.kt` | FIXED: edit dialog now calls onUpdateTerm (was silently doing nothing) |
+| `app/.../ui/admin/SyllabusEditScreen.kt` | FIXED: dayOfWeek dropdown, added term/classroom pickers |
+| `app/.../ui/admin/ClassroomsScreen.kt` | Populated with real classroom list (was "Coming soon" stub) |
+| `app/.../ui/navigation/NavGraph.kt` | Wired term/classroom data into SyllabusEditScreen, onUpdateTerm for Terms, CalendarHeatmapViewModel |
+| `app/.../ui/parent/CalendarHeatmapScreen.kt` | NEW — full implementation with child selector + 3-month color grid |
+| `app/.../ui/parent/CalendarHeatmapViewModel.kt` | NEW — loads children + daily count range |
+| `app/.../ui/parent/ParentViewModel.kt` | FIXED: SocketManager.connect called with token on init |
+| `app/.../ui/teacher/TeacherViewModel.kt` | FIXED: loadTodayEntries passes today's date instead of null |
+| `app/.../util/DateUtils.kt` | Added minusMonths() |
 
 ## Key Decisions
 - PostgreSQL + MinIO + ntfy + Express instead of Firebase (open source, zero cost, on-prem)

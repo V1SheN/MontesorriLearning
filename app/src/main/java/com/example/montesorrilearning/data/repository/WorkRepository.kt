@@ -8,6 +8,7 @@ import com.example.montesorrilearning.data.local.PendingUpload
 import com.example.montesorrilearning.data.remote.ApiService
 import com.example.montesorrilearning.data.remote.ChildDailyCount
 import com.example.montesorrilearning.data.remote.DailyCount
+import com.example.montesorrilearning.data.remote.DailyRangeCount
 import com.example.montesorrilearning.data.remote.DailySummary
 import com.example.montesorrilearning.data.remote.WorkEntryRequest
 import com.example.montesorrilearning.domain.model.WorkEntry
@@ -55,6 +56,14 @@ class WorkRepository @Inject constructor(
     suspend fun getDailyCounts(classroomId: String?): Result<List<ChildDailyCount>> {
         return try {
             Result.success(api.getDailyCounts(classroomId))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun getDailyCountRange(childId: String, from: String, to: String): Result<List<DailyRangeCount>> {
+        return try {
+            Result.success(api.getDailyCountRange(childId, from, to))
         } catch (e: Exception) {
             Result.failure(e)
         }

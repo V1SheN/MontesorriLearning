@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import com.example.montesorrilearning.util.DateUtils
 import java.util.UUID
 import javax.inject.Inject
 
@@ -75,7 +76,7 @@ class TeacherViewModel @Inject constructor(
     fun loadTodayEntries() {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true)
-            workRepository.getWorkEntries(null, null).fold(
+            workRepository.getWorkEntries(null, DateUtils.todayIso()).fold(
                 onSuccess = { entries ->
                     _uiState.value = _uiState.value.copy(todayEntries = entries, isLoading = false)
                 },

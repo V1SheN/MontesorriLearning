@@ -22,6 +22,7 @@ import com.example.montesorrilearning.ui.messaging.MessageThreadScreen
 import com.example.montesorrilearning.ui.messaging.MessageViewModel
 import com.example.montesorrilearning.ui.parent.ArchiveScreen
 import com.example.montesorrilearning.ui.parent.CalendarHeatmapScreen
+import com.example.montesorrilearning.ui.parent.CalendarHeatmapViewModel
 import com.example.montesorrilearning.ui.parent.EntryDetailScreen as ParentEntryDetailScreen
 import com.example.montesorrilearning.ui.parent.FeedScreen
 import com.example.montesorrilearning.ui.parent.ParentViewModel
@@ -257,7 +258,12 @@ fun NavGraph(
         }
 
         composable(Routes.ADMIN_USERS) { UsersScreen(onBack = { navController.popBackStack() }) }
-        composable(Routes.ADMIN_CLASSROOMS) { ClassroomsScreen(onBack = { navController.popBackStack() }) }
+        composable(Routes.ADMIN_CLASSROOMS) {
+            val adminVm: AdminViewModel = viewModel()
+            val uState by adminVm.uiState.collectAsState()
+            ClassroomsScreen(classrooms = uState.classrooms, isLoading = uState.isLoading, onBack = { navController.popBackStack() })
+            LaunchedEffect(Unit) { adminVm.loadClassrooms() }
+        }
         composable(Routes.ADMIN_ANALYTICS) { AnalyticsScreen(onBack = { navController.popBackStack() }) }
 
         // Admin terms
@@ -267,6 +273,7 @@ fun NavGraph(
             TermManagementScreen(
                 terms = uiState.terms, isLoading = uiState.isLoading, error = uiState.error,
                 onCreateTerm = { name, start, end, year -> adminViewModel.createTerm(name, start, end, year) },
+                onUpdateTerm = { id, name, start, end, year -> adminViewModel.updateTerm(id, name, start, end, year) },
                 onDeleteTerm = { adminViewModel.deleteTerm(it) },
                 onBack = { navController.popBackStack() })
             LaunchedEffect(Unit) { adminViewModel.loadTerms() }
@@ -284,7 +291,7 @@ fun NavGraph(
                 onItemClick = { item -> navController.navigate(Routes.syllabusEditRoute(item.id)) },
                 onAdd = { navController.navigate(Routes.ADMIN_SYLLABUS_CREATE) },
                 onRefresh = { adminViewModel.loadSyllabus() }, onBack = { navController.popBackStack() })
-            LaunchedEffect(Unit) { adminViewModel.loadSyllabus() }
+            LaunchedEffect(Unit) { adminViewModel.loadSyllabus(); adminViewModel.loadTerms(); adminViewModel.loadClassrooms() }
         }
 
         composable(Routes.ADMIN_SYLLABUS_EDIT, arguments = listOf(navArgument("itemId") { type = NavType.StringType })) { backStackEntry ->
@@ -294,15 +301,16 @@ fun NavGraph(
             SyllabusEditScreen(
                 existing = uiState.selectedSyllabus, isLoading = uiState.isLoading,
                 error = uiState.error, successMessage = uiState.successMessage,
-                onSave = { _, _, area, title, desc, dow, week, order, extra, atype ->
+                terms = uiState.terms, classrooms = uiState.classrooms,
+                onSave = { termId, classroomId, area, title, desc, dow, week, order, extra, atype ->
                     adminViewModel.updateSyllabus(itemId, com.example.montesorrilearning.data.remote.SyllabusRequest(
-                        termId = "", classroomId = "", montessoriArea = area, title = title,
+                        termId = termId, classroomId = classroomId, montessoriArea = area, title = title,
                         description = desc, dayOfWeek = dow, weekNumber = week, sortOrder = order,
                         isExtracurricular = extra, activityType = atype))
                 },
                 onBack = { adminViewModel.clearSelection(); navController.popBackStack() },
                 onClearMessages = { adminViewModel.clearMessages() })
-            LaunchedEffect(itemId) { adminViewModel.loadSyllabusItem(itemId) }
+            LaunchedEffect(itemId) { adminViewModel.loadSyllabusItem(itemId); adminViewModel.loadTerms(); adminViewModel.loadClassrooms() }
         }
 
         composable(Routes.ADMIN_SYLLABUS_CREATE) {
@@ -310,16 +318,25 @@ fun NavGraph(
             val uiState by adminViewModel.uiState.collectAsState()
             SyllabusEditScreen(
                 existing = null, isLoading = uiState.isLoading, error = uiState.error,
-                successMessage = uiState.successMessage,
-                onSave = { _, _, area, title, desc, dow, week, order, extra, atype ->
-                    adminViewModel.createSyllabus("", "", area, title, desc, dow, week, order, extra, atype)
+                successMessage = uiState.successMessage, terms = uiState.terms, classrooms = uiState.classrooms,
+                onSave = { termId, classroomId, area, title, desc, dow, week, order, extra, atype ->
+                    adminViewModel.createSyllabus(termId, classroomId, area, title, desc, dow, week, order, extra, atype)
                 },
                 onBack = { navController.popBackStack() },
                 onClearMessages = { adminViewModel.clearMessages() })
+            LaunchedEffect(Unit) { adminViewModel.loadTerms(); adminViewModel.loadClassrooms() }
         }
 
         composable(Routes.CALENDAR_HEATMAP) {
-            CalendarHeatmapScreen(onBack = { navController.popBackStack() }, onDateSelected = { date -> parentViewModel.loadArchive(date) })
+            val heatmapViewModel: CalendarHeatmapViewModel = viewModel()
+            val uiState by heatmapViewModel.uiState.collectAsState()
+            CalendarHeatmapScreen(
+                children = uiState.children, selectedChildId = uiState.selectedChildId,
+                dailyCounts = uiState.dailyCounts, isLoading = uiState.isLoading, error = uiState.error,
+                onChildSelected = { heatmapViewModel.selectChild(it) },
+                onDateSelected = { date -> parentViewModel.loadArchive(date); navController.navigate(Routes.ARCHIVE) },
+                onBack = { navController.popBackStack() })
+            LaunchedEffect(Unit) { heatmapViewModel.loadChildren() }
         }
 
         composable(Routes.NOTIFICATION_SETTINGS) {

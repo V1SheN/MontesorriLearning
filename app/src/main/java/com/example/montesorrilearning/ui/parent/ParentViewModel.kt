@@ -8,6 +8,7 @@ import com.example.montesorrilearning.data.remote.SocketManager
 import com.example.montesorrilearning.data.repository.WorkRepository
 import com.example.montesorrilearning.domain.model.WorkEntry
 import com.example.montesorrilearning.util.DateUtils
+import com.example.montesorrilearning.util.TokenManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -28,7 +29,8 @@ data class ParentUiState(
 @HiltViewModel
 class ParentViewModel @Inject constructor(
     private val workRepository: WorkRepository,
-    private val socketManager: SocketManager
+    private val socketManager: SocketManager,
+    private val tokenManager: TokenManager
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ParentUiState())
@@ -37,6 +39,10 @@ class ParentViewModel @Inject constructor(
     init {
         loadFeed()
         observeSocketEvents()
+        viewModelScope.launch {
+            val token = tokenManager.getAccessToken()
+            if (token != null) socketManager.connect(token)
+        }
     }
 
     fun loadFeed() {

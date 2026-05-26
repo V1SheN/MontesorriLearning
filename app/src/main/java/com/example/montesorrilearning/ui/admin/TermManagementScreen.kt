@@ -26,6 +26,7 @@ fun TermManagementScreen(
     isLoading: Boolean,
     error: String?,
     onCreateTerm: (name: String, startDate: String, endDate: String, year: Int) -> Unit,
+    onUpdateTerm: (id: String, name: String, startDate: String, endDate: String, year: Int) -> Unit,
     onDeleteTerm: (String) -> Unit,
     onBack: () -> Unit
 ) {
@@ -130,7 +131,7 @@ fun TermManagementScreen(
             onDismiss = { showDialog = false; editTerm = null },
             onSave = { name, start, end, year ->
                 if (editTerm != null) {
-                    // Uses the ViewModel method via onBack pattern
+                    onUpdateTerm(editTerm!!.id, name, start, end, year)
                 } else {
                     onCreateTerm(name, start, end, year)
                 }

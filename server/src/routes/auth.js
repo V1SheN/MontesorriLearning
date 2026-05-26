@@ -39,13 +39,16 @@ router.post('/register', async (req, res, next) => {
 
     const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
 
+    const allowedRoles = ['teacher', 'parent'];
+    const safeRole = allowedRoles.includes(role) ? role : 'parent';
+
     const [user] = await knex('users')
       .insert({
         email,
         phone,
         password_hash: passwordHash,
         display_name: displayName,
-        role: role || 'parent',
+        role: safeRole,
       })
       .returning(['id', 'email', 'display_name', 'role', 'created_at']);
 

@@ -21,5 +21,5 @@ class TeacherPlanRepository @Inject constructor(private val api: ApiService) {
         runCatching { api.updateTeacherPlan(id, request).toDomain() }
 
     suspend fun deletePlan(id: String): Result<Unit> =
-        runCatching { api.deleteTeacherPlan(id); Unit }
+        runCatching { val r = api.deleteTeacherPlan(id); if (r.isSuccessful) Unit else throw Exception("Delete failed: ${r.code()}") }
 }

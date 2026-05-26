@@ -18,5 +18,5 @@ class TermRepository @Inject constructor(private val api: ApiService) {
         runCatching { api.updateTerm(id, request).toDomain() }
 
     suspend fun deleteTerm(id: String): Result<Unit> =
-        runCatching { api.deleteTerm(id); Unit }
+        runCatching { val r = api.deleteTerm(id); if (r.isSuccessful) Unit else throw Exception("Delete failed: ${r.code()}") }
 }

@@ -26,13 +26,14 @@ exports.up = function (knex) {
       table.timestamp('updated_at', { useTz: true }).notNullable().defaultTo(knex.fn.now());
     })
     .raw("ALTER TABLE syllabus ADD CONSTRAINT syllabus_area_check CHECK (montessori_area IN ('practical_life', 'sensorial', 'language', 'math', 'cultural', 'extracurricular'))")
+    .raw("ALTER TABLE syllabus ADD CONSTRAINT syllabus_dow_check CHECK (day_of_week BETWEEN 1 AND 5)")
     .raw('CREATE INDEX idx_syllabus_term ON syllabus (term_id, sort_order)')
     .raw('CREATE INDEX idx_syllabus_week ON syllabus (term_id, classroom_id, week_number, day_of_week)')
     .createTable('teacher_plans', (table) => {
       table.uuid('id').primary().defaultTo(knex.raw('gen_random_uuid()'));
       table.uuid('syllabus_id').references('id').inTable('syllabus').onDelete('SET NULL');
-      table.uuid('teacher_id').notNullable().references('id').inTable('users');
-      table.uuid('classroom_id').notNullable().references('id').inTable('classrooms');
+      table.uuid('teacher_id').notNullable().references('id').inTable('users').onDelete('CASCADE');
+      table.uuid('classroom_id').notNullable().references('id').inTable('classrooms').onDelete('CASCADE');
       table.uuid('term_id').notNullable().references('id').inTable('terms');
       table.text('title').notNullable();
       table.text('montessori_area').notNullable();
@@ -49,6 +50,7 @@ exports.up = function (knex) {
       table.timestamp('updated_at', { useTz: true }).notNullable().defaultTo(knex.fn.now());
     })
     .raw("ALTER TABLE teacher_plans ADD CONSTRAINT teacher_plans_area_check CHECK (montessori_area IN ('practical_life', 'sensorial', 'language', 'math', 'cultural', 'extracurricular'))")
+    .raw("ALTER TABLE teacher_plans ADD CONSTRAINT teacher_plans_dow_check CHECK (day_of_week BETWEEN 1 AND 5)")
     .raw('CREATE INDEX idx_plans_classroom ON teacher_plans (classroom_id, planned_date)')
     .raw('CREATE INDEX idx_plans_teacher ON teacher_plans (teacher_id)')
     .createTable('child_progress', (table) => {
@@ -70,6 +72,11 @@ exports.up = function (knex) {
 
 exports.down = function (knex) {
   return knex.schema
+    .raw('ALTER TABLE syllabus DROP CONSTRAINT IF EXISTS syllabus_area_check')
+    .raw('ALTER TABLE syllabus DROP CONSTRAINT IF EXISTS syllabus_dow_check')
+    .raw('ALTER TABLE teacher_plans DROP CONSTRAINT IF EXISTS teacher_plans_area_check')
+    .raw('ALTER TABLE teacher_plans DROP CONSTRAINT IF EXISTS teacher_plans_dow_check')
+    .raw('ALTER TABLE child_progress DROP CONSTRAINT IF EXISTS child_progress_status_check')
     .dropTableIfExists('child_progress')
     .dropTableIfExists('teacher_plans')
     .dropTableIfExists('syllabus')

@@ -52,6 +52,14 @@ router.get('/:id', authenticate, requireRole('teacher', 'admin', 'parent'), asyn
       .select('child_progress.*', 'children.name as child_name')
       .where('child_progress.id', req.params.id).first();
     if (!item) return res.status(404).json({ error: 'Progress record not found' });
+
+    if (req.user.role === 'parent') {
+      const childIds = await knex('child_parents').where({ parent_id: req.user.id }).pluck('child_id');
+      if (!childIds.includes(item.child_id)) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+
     res.json(item);
   } catch (err) { next(err); }
 });

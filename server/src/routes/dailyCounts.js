@@ -56,4 +56,32 @@ router.get('/', authenticate, requireRole('teacher', 'admin'), async (req, res, 
   }
 });
 
+// ─── Daily count range (for calendar heatmap) ────────────────
+router.get('/range', authenticate, requireRole('teacher', 'admin', 'parent'), async (req, res, next) => {
+  try {
+    const { childId, from, to } = req.query;
+    if (!childId || !from || !to) {
+      return res.status(400).json({ error: 'childId, from, and to are required' });
+    }
+
+    if (req.user.role === 'parent') {
+      const childIds = await knex('child_parents').where({ parent_id: req.user.id }).pluck('child_id');
+      if (!childIds.includes(childId)) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+
+    const rows = await knex('media as m')
+      .join('work_entries as we', 'm.entry_id', 'we.id')
+      .where('we.child_id', childId)
+      .whereNull('we.deleted_at')
+      .whereRaw('m.created_at::date BETWEEN ? AND ?', [from, to])
+      .select(knex.raw('m.created_at::date as date'), knex.raw('COUNT(*)::int as count'))
+      .groupByRaw('m.created_at::date')
+      .orderBy('date');
+
+    res.json(rows);
+  } catch (err) { next(err); }
+});
+
 module.exports = router;

@@ -42,4 +42,12 @@ object DateUtils {
     fun todayIso(): String = LocalDate.now().format(dateFormatter)
 
     fun isoDate(date: LocalDate): String = date.format(dateFormatter)
+
+    fun minusMonths(dateIso: String, months: Long): String {
+        return try {
+            LocalDate.parse(dateIso, dateFormatter).minusMonths(months).format(dateFormatter)
+        } catch (e: Exception) {
+            LocalDate.now().minusMonths(months).format(dateFormatter)
+        }
+    }
 }

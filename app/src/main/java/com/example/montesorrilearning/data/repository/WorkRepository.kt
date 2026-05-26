@@ -3,8 +3,10 @@ package com.example.montesorrilearning.data.repository
 import android.content.Context
 import android.net.Uri
 import com.example.montesorrilearning.data.local.AppDatabase
+import dagger.hilt.android.qualifiers.ApplicationContext
 import com.example.montesorrilearning.data.local.PendingUpload
 import com.example.montesorrilearning.data.remote.ApiService
+import com.example.montesorrilearning.data.remote.ChildDailyCount
 import com.example.montesorrilearning.data.remote.DailyCount
 import com.example.montesorrilearning.data.remote.DailySummary
 import com.example.montesorrilearning.data.remote.WorkEntryRequest
@@ -21,7 +23,7 @@ import javax.inject.Singleton
 class WorkRepository @Inject constructor(
     private val api: ApiService,
     private val database: AppDatabase,
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) {
 
     suspend fun getWorkEntries(childId: String?, date: String?, page: Int? = null, limit: Int? = null): Result<List<WorkEntry>> {
@@ -45,6 +47,14 @@ class WorkRepository @Inject constructor(
             val response = api.deleteWorkEntry(id)
             if (response.isSuccessful) Result.success(Unit)
             else Result.failure(Exception("Delete failed: ${response.code()}"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun getDailyCounts(classroomId: String?): Result<List<ChildDailyCount>> {
+        return try {
+            Result.success(api.getDailyCounts(classroomId))
         } catch (e: Exception) {
             Result.failure(e)
         }

@@ -35,14 +35,15 @@ services:
       - minio
       - ntfy
     environment:
-      DATABASE_URL: postgres://montessori@postgres/montessori
-      DB_PASSWORD_FILE: /run/secrets/db_password
+      DATABASE_URL: postgres://montessori:montessori_dev_password@postgres/montessori
       MINIO_ENDPOINT: minio:9000
       MINIO_ACCESS_KEY: minioadmin
-      MINIO_SECRET_KEY_FILE: /run/secrets/minio_password
-      JWT_SECRET_FILE: /run/secrets/jwt_secret
+      MINIO_SECRET_KEY: minio_dev_password
+      JWT_SECRET: dev_jwt_secret_key_2026
       NTFY_URL: http://ntfy:80
       PORT: 3000
+    ports:
+      - "3000:3000"
     secrets:
       - db_password
       - minio_password
@@ -53,6 +54,7 @@ services:
 
   ntfy:
     image: binwiederhier/ntfy
+    command: serve
     volumes:
       - ./data/ntfy:/var/lib/ntfy
     restart: always
@@ -62,8 +64,7 @@ services:
   caddy:
     image: caddy:alpine
     ports:
-      - "80:80"
-      - "443:443"
+      - "8081:8080"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./data/caddy/data:/data

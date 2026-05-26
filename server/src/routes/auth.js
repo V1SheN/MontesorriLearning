@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const pino = require('pino')();
 const knex = require('../db/knex');
@@ -88,7 +88,16 @@ router.post('/login', async (req, res, next) => {
     const accessToken = generateAccessToken(user);
     const refreshToken = generateRefreshToken(user);
 
-    res.json({ accessToken, refreshToken });
+    res.json({
+      accessToken,
+      refreshToken,
+      user: {
+        id: user.id,
+        email: user.email,
+        displayName: user.display_name,
+        role: user.role,
+      },
+    });
   } catch (err) {
     next(err);
   }

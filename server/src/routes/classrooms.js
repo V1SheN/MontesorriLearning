@@ -23,6 +23,18 @@ router.get('/', authenticate, async (req, res, next) => {
   }
 });
 
+router.post('/', authenticate, requireRole('admin'), (req, res) => {
+  res.status(501).json({ message: 'Not implemented' });
+});
+
+router.put('/:id', authenticate, requireRole('admin'), (req, res) => {
+  res.status(501).json({ message: 'Not implemented' });
+});
+
+router.delete('/:id', authenticate, requireRole('admin'), (req, res) => {
+  res.status(501).json({ message: 'Not implemented' });
+});
+
 router.get('/:id', authenticate, async (req, res, next) => {
   try {
     const classroom = await knex('classrooms').where({ id: req.params.id }).first();

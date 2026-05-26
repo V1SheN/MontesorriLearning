@@ -5,5 +5,11 @@ enum class MontessoriArea(val displayName: String) {
     SENSORIAL("Sensorial"),
     LANGUAGE("Language"),
     MATH("Mathematics"),
-    CULTURAL("Cultural Studies")
+    CULTURAL("Cultural Studies"),
+    EXTRACURRICULAR("Extra-Curricular");
+
+    companion object {
+        fun fromApiValue(value: String): MontessoriArea =
+            entries.find { it.name == value.uppercase() } ?: EXTRACURRICULAR
+    }
 }

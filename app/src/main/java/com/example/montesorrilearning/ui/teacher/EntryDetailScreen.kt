@@ -1,10 +1,12 @@
 package com.example.montesorrilearning.ui.teacher
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -16,7 +18,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.WorkEntry
-import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,7 +52,7 @@ fun EntryDetailScreen(
                 title = { Text(entry.title) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
@@ -59,7 +60,10 @@ fun EntryDetailScreen(
                         Icon(Icons.Default.Delete, contentDescription = "Delete")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                )
             )
         }
     ) { padding ->
@@ -69,6 +73,7 @@ fun EntryDetailScreen(
                 .padding(padding)
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp)
+                .animateContentSize()
         ) {
             entry.media.filter { it.isCover || it.sortOrder == 0 }.firstOrNull()?.let { cover ->
                 AsyncImage(
@@ -103,7 +108,7 @@ fun EntryDetailScreen(
             Text(
                 text = entry.childName ?: "Child",
                 style = MaterialTheme.typography.titleLarge,
-                color = WarmBrownDark,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.SemiBold
             )
 
@@ -111,13 +116,13 @@ fun EntryDetailScreen(
 
             Surface(
                 shape = RoundedCornerShape(8.dp),
-                color = SoftGreen.copy(alpha = 0.2f)
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
             ) {
                 Text(
                     text = entry.montessoriArea,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                     style = MaterialTheme.typography.labelLarge,
-                    color = SoftGreenDark
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
 
@@ -126,7 +131,7 @@ fun EntryDetailScreen(
             Text(
                 text = DateUtils.formatForDisplay(entry.createdAt),
                 style = MaterialTheme.typography.bodySmall,
-                color = WarmBrown
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -134,7 +139,7 @@ fun EntryDetailScreen(
             Text(
                 text = entry.teacherComment.ifEmpty { "No comment" },
                 style = MaterialTheme.typography.bodyLarge,
-                color = OnSurfaceLight
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
     }

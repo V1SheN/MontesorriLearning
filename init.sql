@@ -72,6 +72,7 @@ CREATE TABLE work_entries (
     )),
     title           TEXT NOT NULL DEFAULT '',
     teacher_comment TEXT NOT NULL DEFAULT '',
+    deleted_at      TIMESTAMPTZ,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -117,6 +118,81 @@ CREATE TABLE message_recipients (
 );
 
 -- ============================================================
+-- Terms (4 per year, Southern Hemisphere)
+-- ============================================================
+CREATE TABLE terms (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name        TEXT NOT NULL,
+    start_date  DATE NOT NULL,
+    end_date    DATE NOT NULL,
+    year        INT NOT NULL DEFAULT EXTRACT(YEAR FROM CURRENT_DATE),
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================
+-- Syllabus (admin-managed curriculum, term + day-of-week)
+-- ============================================================
+CREATE TABLE syllabus (
+    id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    term_id           UUID NOT NULL REFERENCES terms(id) ON DELETE CASCADE,
+    classroom_id      UUID NOT NULL REFERENCES classrooms(id) ON DELETE CASCADE,
+    montessori_area   TEXT NOT NULL CHECK (montessori_area IN (
+        'practical_life', 'sensorial', 'language', 'math', 'cultural', 'extracurricular'
+    )),
+    title             TEXT NOT NULL,
+    description       TEXT NOT NULL DEFAULT '',
+    day_of_week       INT NOT NULL DEFAULT 1 CHECK (day_of_week BETWEEN 1 AND 5),
+    week_number       INT,
+    sort_order        INT NOT NULL DEFAULT 0,
+    is_extracurricular BOOLEAN NOT NULL DEFAULT false,
+    activity_type     TEXT,
+    duration_minutes  INT,
+    created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================
+-- Teacher Plans (teachers deviate from syllabus as needed)
+-- ============================================================
+CREATE TABLE teacher_plans (
+    id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    syllabus_id       UUID REFERENCES syllabus(id) ON DELETE SET NULL,
+    teacher_id        UUID NOT NULL REFERENCES users(id),
+    classroom_id      UUID NOT NULL REFERENCES classrooms(id),
+    term_id           UUID NOT NULL REFERENCES terms(id),
+    title             TEXT NOT NULL,
+    montessori_area   TEXT NOT NULL CHECK (montessori_area IN (
+        'practical_life', 'sensorial', 'language', 'math', 'cultural', 'extracurricular'
+    )),
+    description       TEXT NOT NULL DEFAULT '',
+    planned_date      DATE NOT NULL,
+    day_of_week       INT NOT NULL,
+    week_number       INT,
+    is_extracurricular BOOLEAN NOT NULL DEFAULT false,
+    activity_type     TEXT,
+    duration_minutes  INT,
+    is_completed      BOOLEAN NOT NULL DEFAULT false,
+    teacher_notes     TEXT,
+    created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================
+-- Child Progress (per-syllabus-item tracking)
+-- ============================================================
+CREATE TABLE child_progress (
+    id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    child_id          UUID NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+    syllabus_id       UUID REFERENCES syllabus(id) ON DELETE SET NULL,
+    teacher_plan_id   UUID REFERENCES teacher_plans(id) ON DELETE SET NULL,
+    status            TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'in_progress', 'completed', 'mastered')),
+    observation_notes TEXT,
+    completed_at      TIMESTAMPTZ,
+    created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================
 -- Indexes
 -- ============================================================
 CREATE INDEX idx_media_created ON media (created_at);
@@ -125,3 +201,10 @@ CREATE INDEX idx_entries_classroom_date ON work_entries (classroom_id, created_a
 CREATE INDEX idx_media_entry ON media (entry_id);
 CREATE INDEX idx_messages_recipient ON message_recipients (user_id, message_id);
 CREATE INDEX idx_entries_created ON work_entries (created_at);
+CREATE INDEX idx_syllabus_term ON syllabus (term_id, sort_order);
+CREATE INDEX idx_syllabus_week ON syllabus (term_id, classroom_id, week_number, day_of_week);
+CREATE INDEX idx_plans_classroom ON teacher_plans (classroom_id, planned_date);
+CREATE INDEX idx_plans_teacher ON teacher_plans (teacher_id);
+CREATE INDEX idx_progress_child ON child_progress (child_id);
+CREATE UNIQUE INDEX idx_progress_child_syllabus ON child_progress (child_id, syllabus_id) WHERE syllabus_id IS NOT NULL;
+CREATE UNIQUE INDEX idx_progress_child_plan ON child_progress (child_id, teacher_plan_id) WHERE teacher_plan_id IS NOT NULL;

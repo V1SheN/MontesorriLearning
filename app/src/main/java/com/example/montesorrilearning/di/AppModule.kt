@@ -17,14 +17,16 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.google.gson.GsonBuilder
 import java.util.concurrent.TimeUnit
+import javax.inject.Provider
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    private const val BASE_URL = "https://school.example.com/"
+    private const val BASE_URL = "http://10.0.2.2:3000/"
 
     @Provides
     @Singleton
@@ -34,8 +36,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAuthInterceptor(tokenManager: TokenManager): AuthInterceptor {
-        return AuthInterceptor(tokenManager)
+    fun provideAuthInterceptor(
+        tokenManager: TokenManager,
+        apiService: Provider<ApiService>
+    ): AuthInterceptor {
+        return AuthInterceptor(tokenManager, apiService)
     }
 
     @Provides
@@ -56,10 +61,13 @@ object AppModule {
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 
@@ -76,7 +84,7 @@ object AppModule {
             context,
             AppDatabase::class.java,
             "montessori_db"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
     @Provides

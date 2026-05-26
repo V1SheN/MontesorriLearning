@@ -27,6 +27,8 @@ function initSocket(httpServer) {
   io.on('connection', async (socket) => {
     pino.info({ userId: socket.user.id, role: socket.user.role }, 'Socket connected');
 
+    socket.join(`user:${socket.user.id}`);
+
     if (socket.user.role === 'parent') {
       socket.join(`parent:${socket.user.id}`);
     } else if (socket.user.role === 'teacher' || socket.user.role === 'admin') {

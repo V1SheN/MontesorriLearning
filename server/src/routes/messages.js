@@ -61,6 +61,7 @@ router.post('/', authenticate, requireRole('teacher', 'admin'), async (req, res,
     });
 
     const messageChannels = channels || ['push'];
+    const io = req.app.get('io');
     for (const userId of resolvedRecipientIds) {
       if (messageChannels.includes('push')) {
         await sendPush(`parent:${userId}`, subject || 'New message', body);
@@ -70,6 +71,15 @@ router.post('/', authenticate, requireRole('teacher', 'admin'), async (req, res,
         if (user && user.notif_prefs && user.notif_prefs.email) {
           await sendEmail(user.email, subject || 'New message', body);
         }
+      }
+      if (io) {
+        io.to(`user:${userId}`).emit('new_message', {
+          messageId: message.id,
+          senderId: req.user.id,
+          subject: subject || null,
+          body,
+          createdAt: message.created_at,
+        });
       }
     }
 

@@ -5,6 +5,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -16,7 +17,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.montesorrilearning.domain.model.WorkEntry
-import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,10 +32,10 @@ fun EntryDetailScreen(
                 title = { Text(entry.title) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surface)
             )
         }
     ) { padding ->
@@ -61,13 +61,13 @@ fun EntryDetailScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.Person, contentDescription = null, modifier = Modifier.size(20.dp), tint = WarmBrown)
+                Icon(Icons.Default.Person, contentDescription = null, modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
                     text = entry.childName ?: "Child",
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.SemiBold,
-                    color = WarmBrownDark
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
 
@@ -75,13 +75,13 @@ fun EntryDetailScreen(
 
             Surface(
                 shape = RoundedCornerShape(8.dp),
-                color = SoftGreen.copy(alpha = 0.2f)
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
             ) {
                 Text(
                     text = entry.montessoriArea,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                     style = MaterialTheme.typography.labelLarge,
-                    color = SoftGreenDark
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
 
@@ -90,7 +90,7 @@ fun EntryDetailScreen(
             Text(
                 text = DateUtils.formatForDisplay(entry.createdAt),
                 style = MaterialTheme.typography.bodySmall,
-                color = WarmBrown
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -98,7 +98,7 @@ fun EntryDetailScreen(
             Text(
                 text = entry.teacherComment.ifEmpty { "No comment" },
                 style = MaterialTheme.typography.bodyLarge,
-                color = OnSurfaceLight
+                color = MaterialTheme.colorScheme.onSurface
             )
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -115,7 +115,7 @@ fun EntryDetailScreen(
 
             if (entry.media.size > 1) {
                 Spacer(modifier = Modifier.height(16.dp))
-                Text("All Photos", style = MaterialTheme.typography.titleMedium, color = WarmBrownDark)
+                Text("All Photos", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(modifier = Modifier.height(8.dp))
                 entry.media.forEach { media ->
                     Spacer(modifier = Modifier.height(8.dp))

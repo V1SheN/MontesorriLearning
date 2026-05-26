@@ -1,10 +1,14 @@
 package com.example.montesorrilearning.ui.messaging
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -13,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.montesorrilearning.domain.model.Message
-import com.example.montesorrilearning.ui.theme.*
 import com.example.montesorrilearning.util.DateUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -42,10 +45,13 @@ fun MessageThreadScreen(
                 title = { Text("Messages") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = WarmCream)
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
+                )
             )
         }
     ) { padding ->
@@ -60,12 +66,12 @@ fun MessageThreadScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    items(messages.size) { index ->
+                    items(messages.size, key = { index -> messages[index].id }) { index ->
                         val msg = messages[index]
                         Card(
                             shape = RoundedCornerShape(12.dp),
                             colors = CardDefaults.cardColors(
-                                containerColor = if (msg.readAt == null) WarmCream else CardBackground
+                                containerColor = if (msg.readAt == null) MaterialTheme.colorScheme.surfaceVariant else MaterialTheme.colorScheme.surface
                             )
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
@@ -73,17 +79,17 @@ fun MessageThreadScreen(
                                     text = msg.subject ?: "(No subject)",
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.SemiBold,
-                                    color = WarmBrownDark
+                                    color = MaterialTheme.colorScheme.onSurface
                                 )
                                 Text(
                                     text = msg.body,
                                     style = MaterialTheme.typography.bodyMedium,
-                                    color = OnSurfaceLight
+                                    color = MaterialTheme.colorScheme.onSurface
                                 )
                                 Text(
                                     text = DateUtils.formatForDisplay(msg.createdAt),
                                     style = MaterialTheme.typography.labelSmall,
-                                    color = WarmBrown.copy(alpha = 0.5f)
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
                                 )
                             }
                         }
@@ -103,50 +109,59 @@ fun MessageThreadScreen(
                     Text("New Message")
                 }
             } else {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScroll(rememberScrollState())
-                        .padding(16.dp)
+                AnimatedVisibility(
+                    visible = true,
+                    enter = fadeIn(animationSpec = tween(300)) + slideInVertically(
+                        animationSpec = tween(300),
+                        initialOffsetY = { it }
+                    )
                 ) {
-                    OutlinedTextField(
-                        value = subject,
-                        onValueChange = { subject = it },
-                        label = { Text("Subject") },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-
-                    Spacer(modifier = Modifier.height(12.dp))
-
-                    OutlinedTextField(
-                        value = body,
-                        onValueChange = { body = it },
-                        label = { Text("Message") },
+                    Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .heightIn(min = 150.dp),
-                        maxLines = 10
-                    )
-
-                    Spacer(modifier = Modifier.height(16.dp))
-
-                    Button(
-                        onClick = { onSend(body, subject.ifBlank { null }, null) },
-                        enabled = body.isNotBlank(),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp),
-                        shape = MaterialTheme.shapes.medium
+                            .fillMaxSize()
+                            .verticalScroll(rememberScrollState())
+                            .padding(16.dp)
+                            .animateContentSize()
                     ) {
-                        Text("Send")
-                    }
+                        OutlinedTextField(
+                            value = subject,
+                            onValueChange = { subject = it },
+                            label = { Text("Subject") },
+                            singleLine = true,
+                            modifier = Modifier.fillMaxWidth()
+                        )
 
-                    TextButton(
-                        onClick = { showCompose = false },
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text("Cancel")
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        OutlinedTextField(
+                            value = body,
+                            onValueChange = { body = it },
+                            label = { Text("Message") },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(min = 150.dp),
+                            maxLines = 10
+                        )
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Button(
+                            onClick = { onSend(body, subject.ifBlank { null }, null) },
+                            enabled = body.isNotBlank(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp),
+                            shape = MaterialTheme.shapes.medium
+                        ) {
+                            Text("Send")
+                        }
+
+                        TextButton(
+                            onClick = { showCompose = false },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text("Cancel")
+                        }
                     }
                 }
             }

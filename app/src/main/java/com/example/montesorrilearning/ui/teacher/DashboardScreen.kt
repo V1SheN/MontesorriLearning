@@ -28,6 +28,8 @@ fun DashboardScreen(
     dailyCounts: Map<String, Int>,
     onChildClick: (Child) -> Unit,
     onViewToday: () -> Unit,
+    onCalendar: () -> Unit = {},
+    onProgress: () -> Unit = {},
     onMessages: () -> Unit,
     onLogout: () -> Unit
 ) {
@@ -36,6 +38,8 @@ fun DashboardScreen(
             TopAppBar(
                 title = { Text("My Class") },
                 actions = {
+                    TextButton(onClick = onCalendar) { Text("Calendar") }
+                    TextButton(onClick = onProgress) { Text("Progress") }
                     TextButton(onClick = onMessages) { Text("Messages") }
                     TextButton(onClick = onLogout) { Text("Logout") }
                 },

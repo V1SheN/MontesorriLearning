@@ -26,7 +26,9 @@ fun SyllabusListScreen(
     isLoading: Boolean,
     error: String?,
     selectedArea: String?,
+    selectedWeek: Int?,
     onAreaFilter: (String?) -> Unit,
+    onWeekFilter: (Int?) -> Unit,
     onItemClick: (Syllabus) -> Unit,
     onAdd: () -> Unit,
     onRefresh: () -> Unit,
@@ -38,224 +40,78 @@ fun SyllabusListScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Syllabus") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                },
-                actions = {
-                    IconButton(onClick = onRefresh) {
-                        Icon(Icons.Default.Refresh, contentDescription = "Refresh")
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                    titleContentColor = MaterialTheme.colorScheme.onSurface
-                )
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back") } },
+                actions = { IconButton(onClick = onRefresh) { Icon(Icons.Default.Refresh, contentDescription = "Refresh") } },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surface, titleContentColor = MaterialTheme.colorScheme.onSurface)
             )
         },
         floatingActionButton = {
-            ExtendedFloatingActionButton(
-                onClick = onAdd,
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.onPrimary
-            ) {
-                Icon(Icons.Default.Add, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Add")
+            ExtendedFloatingActionButton(onClick = onAdd, containerColor = MaterialTheme.colorScheme.primary, contentColor = MaterialTheme.colorScheme.onPrimary) {
+                Icon(Icons.Default.Add, contentDescription = null); Spacer(modifier = Modifier.width(8.dp)); Text("Add")
             }
         }
     ) { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .background(MaterialTheme.colorScheme.background)
-        ) {
-            AreaFilterChips(
-                selectedArea = selectedArea,
-                onAreaSelected = onAreaFilter
-            )
+        Column(modifier = Modifier.fillMaxSize().padding(padding).background(MaterialTheme.colorScheme.background)) {
+            // Filters
+            AreaFilterChips(selectedArea = selectedArea, onAreaSelected = onAreaFilter)
+            WeekFilterChips(selectedWeek = selectedWeek, onWeekSelected = onWeekFilter)
 
             when {
-                isLoading -> {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
-                    }
-                }
-                error != null -> {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text(error, color = MaterialTheme.colorScheme.error)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            TextButton(onClick = onRefresh) { Text("Retry") }
-                        }
-                    }
-                }
-                syllabus.isEmpty() -> {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Icon(
-                                Icons.Default.School,
-                                contentDescription = null,
-                                modifier = Modifier.size(64.dp),
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(modifier = Modifier.height(12.dp))
-                            Text(
-                                "No syllabus items",
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                }
-                else -> {
-                    LazyColumn(
-                        contentPadding = PaddingValues(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        items(syllabus, key = { it.id }) { item ->
-                            AnimatedVisibility(
-                                visible = true,
-                                enter = fadeIn(animationSpec = tween(400)) + slideInVertically(
-                                    animationSpec = tween(400),
-                                    initialOffsetY = { it / 4 }
-                                )
-                            ) {
-                                SyllabusCard(
-                                    item = item,
-                                    onClick = { onItemClick(item) },
-                                    onDelete = { showDeleteDialog = item }
-                                )
-                            }
+                isLoading -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator(color = MaterialTheme.colorScheme.primary) }
+                error != null -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { Column(horizontalAlignment = Alignment.CenterHorizontally) { Text(error, color = MaterialTheme.colorScheme.error); Spacer(modifier = Modifier.height(8.dp)); TextButton(onClick = onRefresh) { Text("Retry") } } }
+                syllabus.isEmpty() -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { Column(horizontalAlignment = Alignment.CenterHorizontally) { Icon(Icons.Default.School, contentDescription = null, modifier = Modifier.size(64.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant); Spacer(modifier = Modifier.height(12.dp)); Text("No syllabus items", color = MaterialTheme.colorScheme.onSurfaceVariant) } }
+                else -> LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    items(syllabus, key = { it.id }) { item ->
+                        AnimatedVisibility(visible = true, enter = fadeIn(animationSpec = tween(400)) + slideInVertically(animationSpec = tween(400))) {
+                            SyllabusCard(item = item, onClick = { onItemClick(item) })
                         }
                     }
                 }
             }
         }
     }
-
-    showDeleteDialog?.let { item ->
-        AlertDialog(
-            onDismissRequest = { showDeleteDialog = null },
-            title = { Text("Delete \"${item.title}\"?") },
-            text = { Text("This action cannot be undone.") },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        showDeleteDialog = null
-                        onRefresh()
-                    },
-                    colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.error)
-                ) { Text("Delete") }
-            },
-            dismissButton = {
-                TextButton(onClick = { showDeleteDialog = null }) { Text("Cancel") }
-            }
-        )
-    }
 }
 
 @Composable
-private fun AreaFilterChips(
-    selectedArea: String?,
-    onAreaSelected: (String?) -> Unit
-) {
-    val areas = listOf(
-        null to "All",
-        "practical_life" to "Practical Life",
-        "sensorial" to "Sensorial",
-        "language" to "Language",
-        "math" to "Math",
-        "cultural" to "Cultural"
-    )
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
+private fun AreaFilterChips(selectedArea: String?, onAreaSelected: (String?) -> Unit) {
+    val areas = listOf(null to "All", "practical_life" to "Practical Life", "sensorial" to "Sensorial", "language" to "Language", "math" to "Math", "cultural" to "Cultural", "extracurricular" to "Extra-Curricular")
+    Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         areas.forEach { (value, label) ->
-            FilterChip(
-                selected = selectedArea == value,
-                onClick = { onAreaSelected(value) },
+            FilterChip(selected = selectedArea == value, onClick = { onAreaSelected(value) },
                 label = { Text(label, style = MaterialTheme.typography.labelSmall) },
-                colors = FilterChipDefaults.filterChipColors(
-                    selectedContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.15f),
-                    selectedLabelColor = MaterialTheme.colorScheme.primary
-                )
-            )
+                colors = FilterChipDefaults.filterChipColors(selectedContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.15f), selectedLabelColor = MaterialTheme.colorScheme.primary))
         }
     }
 }
 
 @Composable
-private fun SyllabusCard(
-    item: Syllabus,
-    onClick: () -> Unit,
-    onDelete: () -> Unit
-) {
-    Card(
-        onClick = onClick,
-        shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp)
-                .animateContentSize(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+private fun WeekFilterChips(selectedWeek: Int?, onWeekSelected: (Int?) -> Unit) {
+    Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FilterChip(selected = selectedWeek == null, onClick = { onWeekSelected(null) }, label = { Text("All", style = MaterialTheme.typography.labelSmall) })
+        (1..5).forEach { w ->
+            FilterChip(selected = selectedWeek == w, onClick = { onWeekSelected(w) }, label = { Text("W$w", style = MaterialTheme.typography.labelSmall) })
+        }
+    }
+}
+
+@Composable
+private fun SyllabusCard(item: Syllabus, onClick: () -> Unit) {
+    Card(onClick = onClick, shape = RoundedCornerShape(12.dp), colors = CardDefaults.cardColors(containerColor = if (item.isExtracurricular) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surface), elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)) {
+        Row(modifier = Modifier.fillMaxWidth().padding(12.dp).animateContentSize(), verticalAlignment = Alignment.CenterVertically) {
             Column(modifier = Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = item.title,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
+                    Text(item.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    AssistChip(onClick = {}, label = { Text(item.dayLabel, style = MaterialTheme.typography.labelSmall) }, modifier = Modifier.height(24.dp), colors = AssistChipDefaults.assistChipColors(containerColor = MaterialTheme.colorScheme.surfaceVariant))
                     if (item.weekNumber != null) {
-                        Spacer(modifier = Modifier.width(8.dp))
-                        AssistChip(
-                            onClick = {},
-                            label = {
-                                Text(
-                                    "W${item.weekNumber}",
-                                    style = MaterialTheme.typography.labelSmall
-                                )
-                            },
-                            modifier = Modifier.height(24.dp),
-                            colors = AssistChipDefaults.assistChipColors(
-                                containerColor = MaterialTheme.colorScheme.surfaceVariant
-                            )
-                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        AssistChip(onClick = {}, label = { Text("W${item.weekNumber}", style = MaterialTheme.typography.labelSmall) }, modifier = Modifier.height(24.dp), colors = AssistChipDefaults.assistChipColors(containerColor = MaterialTheme.colorScheme.surfaceVariant))
                     }
                 }
-                Text(
-                    text = item.areaDisplayName,
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.primary
-                )
+                Text(item.areaDisplayName, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
                 if (item.description.isNotBlank()) {
-                    Text(
-                        text = item.description,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    Text(item.description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis)
                 }
-            }
-            IconButton(onClick = onDelete) {
-                Icon(
-                    Icons.Default.Delete,
-                    contentDescription = "Delete",
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
-                )
             }
         }
     }

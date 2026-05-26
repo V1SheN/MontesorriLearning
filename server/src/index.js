@@ -28,6 +28,8 @@ const classroomsRoutes = require('./routes/classrooms');
 const dailySummaryRoutes = require('./routes/dailySummary');
 const dailyCountsRoutes = require('./routes/dailyCounts');
 const adminRoutes = require('./routes/admin');
+const teacherPlansRoutes = require('./routes/teacherPlans');
+const childProgressRoutes = require('./routes/childProgress');
 
 const app = express();
 
@@ -67,6 +69,8 @@ app.use('/api/classrooms', classroomsRoutes);
 app.use('/api/daily-summary', dailySummaryRoutes);
 app.use('/api/daily-counts', dailyCountsRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/teacher-plans', teacherPlansRoutes);
+app.use('/api/child-progress', childProgressRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

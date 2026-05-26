@@ -15,6 +15,7 @@ fun AdminDashboardScreen(
     onNavigateToClassrooms: () -> Unit = {},
     onNavigateToAnalytics: () -> Unit = {},
     onNavigateToSyllabus: () -> Unit = {},
+    onNavigateToTerms: () -> Unit = {},
     onLogout: () -> Unit
 ) {
     Scaffold(
@@ -38,6 +39,12 @@ fun AdminDashboardScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            FilledTonalButton(
+                onClick = onNavigateToTerms,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
+                Text("Term Management")
+            }
             FilledTonalButton(
                 onClick = onNavigateToSyllabus,
                 modifier = Modifier.fillMaxWidth().height(56.dp)

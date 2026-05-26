@@ -7,52 +7,23 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SyllabusRepository @Inject constructor(
-    private val api: ApiService
-) {
+class SyllabusRepository @Inject constructor(private val api: ApiService) {
     suspend fun getSyllabus(
-        classroomId: String? = null,
-        montessoriArea: String? = null,
-        year: Int? = null
-    ): Result<List<Syllabus>> {
-        return try {
-            Result.success(api.getSyllabus(classroomId, montessoriArea, year).map { it.toDomain() })
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
+        classroomId: String? = null, termId: String? = null,
+        montessoriArea: String? = null, weekNumber: Int? = null,
+        dayOfWeek: Int? = null, isExtracurricular: Boolean? = null
+    ): Result<List<Syllabus>> =
+        runCatching { api.getSyllabus(classroomId, termId, montessoriArea, weekNumber, dayOfWeek, isExtracurricular).map { it.toDomain() } }
 
-    suspend fun getSyllabusItem(id: String): Result<Syllabus> {
-        return try {
-            Result.success(api.getSyllabusItem(id).toDomain())
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
+    suspend fun getSyllabusItem(id: String): Result<Syllabus> =
+        runCatching { api.getSyllabusItem(id).toDomain() }
 
-    suspend fun createSyllabus(request: SyllabusRequest): Result<Syllabus> {
-        return try {
-            Result.success(api.createSyllabus(request).toDomain())
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
+    suspend fun createSyllabus(request: SyllabusRequest): Result<Syllabus> =
+        runCatching { api.createSyllabus(request).toDomain() }
 
-    suspend fun updateSyllabus(id: String, request: SyllabusRequest): Result<Syllabus> {
-        return try {
-            Result.success(api.updateSyllabus(id, request).toDomain())
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
+    suspend fun updateSyllabus(id: String, request: SyllabusRequest): Result<Syllabus> =
+        runCatching { api.updateSyllabus(id, request).toDomain() }
 
-    suspend fun deleteSyllabus(id: String): Result<Unit> {
-        return try {
-            val response = api.deleteSyllabus(id)
-            if (response.isSuccessful) Result.success(Unit)
-            else Result.failure(Exception("Delete failed: ${response.code()}"))
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
+    suspend fun deleteSyllabus(id: String): Result<Unit> =
+        runCatching { val r = api.deleteSyllabus(id); if (r.isSuccessful) Unit else throw Exception("Delete failed: ${r.code()}") }
 }

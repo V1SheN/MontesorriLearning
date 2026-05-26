@@ -32,6 +32,7 @@ fun FeedScreen(
     onRefresh: () -> Unit,
     onArchive: () -> Unit,
     onShareSummary: () -> Unit,
+    onExpectations: () -> Unit = {},
     onMessages: () -> Unit,
     onLogout: () -> Unit
 ) {
@@ -40,6 +41,7 @@ fun FeedScreen(
             TopAppBar(
                 title = { Text("Today's Feed") },
                 actions = {
+                    TextButton(onClick = onExpectations) { Text("Calendar") }
                     TextButton(onClick = onMessages) { Text("Messages") }
                     TextButton(onClick = onLogout) { Text("Logout") }
                 },
